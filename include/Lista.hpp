@@ -52,6 +52,15 @@ class Lista{
             tamanho--;
         }
 
+        int encontrar(const& T){
+            for (int i = 0; i < tamanho; i++){
+                if (dados[i] == T){
+                    return i;
+                }
+            }
+            return -1;
+        };
+
         T& obter(int pos){
             if (pos < 0 || pos >= tamanho) {
                 throw std::out_of_range("Erro: índice inválido!");
