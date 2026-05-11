@@ -94,6 +94,10 @@ public:
         nos.inserir(vizinhos_vazios);
         tamanho++;
     }
+
+    Lista<No*>& operator[](int index) {
+        return nos[index];
+    }
 };
 
 enum TipoGrafo{
@@ -150,6 +154,41 @@ public:
         else if (this->tipo == GRAFO_LISTA){
             lista->adicionar_aresta(nos[id_grafo1], nos[id_grafo2], bidirecional);
         }
+    }
+
+    void trocar_tipo(TipoGrafo novo_tipo) {
+        if (this->tipo == novo_tipo) return;
+
+        int qtd_nos = nos.get_tamanho();
+
+        if (novo_tipo == GRAFO_MATRIZ) {
+            matriz = new MatrizAdjacencia(qtd_nos);
+            for (int i = 0; i < qtd_nos; i++) {
+                Lista<No*>& vizinhos = (*lista)[i]; 
+                
+                for (int j = 0; j < vizinhos.get_tamanho(); j++) {
+                    int id_vizinho = vizinhos[j]->id_grafo;
+                    matriz->alterar_valor(i, id_vizinho, 1, false);
+                }
+            }
+            
+            delete lista;
+            lista = nullptr;
+
+        } else if (novo_tipo == GRAFO_LISTA) {
+            lista = new ListaAdjacencia(qtd_nos);
+            
+            for (int i = 0; i < qtd_nos; i++) {
+                for (int j = 0; j < qtd_nos; j++) {
+                    if (matriz->obter_valor(i, j) == 1) { 
+                        lista->adicionar_aresta(nos[i], nos[j], false);
+                    }
+                }
+            }
+            delete matriz;
+            matriz = nullptr;
+        }
+        this->tipo = novo_tipo; 
     }
 
 };
