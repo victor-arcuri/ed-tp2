@@ -52,7 +52,7 @@ class Lista{
             tamanho--;
         }
 
-        int encontrar(const& T){
+        int encontrar(const T&){
             for (int i = 0; i < tamanho; i++){
                 if (dados[i] == T){
                     return i;
