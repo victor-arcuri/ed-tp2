@@ -19,17 +19,16 @@ class Sistema {
 
 
 public:
-    Sistema();
+    Sistema(TipoGrafo tipoInicial);
     ~Sistema();
 
     void alterar_armazenamento(TipoGrafo tipo);
-    const int adicionar_usuario(std::string& nome, int idade, Lista<int> tema_ids);
-    const int adicionar_tema(std::string& nome, TipoTema tipo);
+    const int adicionar_usuario(const std::string& nome, int idade, Lista<int> tema_ids);
+    const int adicionar_tema(const std::string& nome, TipoTema tipo);
     void seguir_usuario(int id1, int id2);
     void remover_seguimento_usuario(int id1, int id2);
     void consultar_temas(int id_usuario) const;
     void consultar_seguidores(int id_usuario) const;
-    void consultar_seguidos(int id_usuario) const;
     void consultar_seguidos(int id_usuario) const;
     void consultar_amigos(int id_usuario) const;
     void consultar_relacao(int id1, int id2) const;
