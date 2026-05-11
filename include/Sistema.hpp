@@ -17,6 +17,11 @@ class Sistema {
     int num_usuarios;
     int num_temas;
 
+    void ordenar_vizinhos(Lista<No*>& lista) const;
+    void quickSort_internos(Lista<No*>& lista, int inicio, int fim) const;
+    int particionar_vizinhos(Lista<No*>& lista, int inicio, int fim) const;
+    void trocar_nos(Lista<No*>& lista, int i, int j) const;
+
 
 public:
     Sistema(TipoGrafo tipoInicial);

@@ -41,26 +41,6 @@ class Lista{
             dados[tamanho] = elemento;
             tamanho++;
         };
-
-        void remover(int pos){
-            if (pos < 0 || pos >= tamanho - 1) {
-                throw std::out_of_range("Erro: índice inválido!");
-            }
-            for (int i = pos; i < tamanho; i++){
-                dados[i] = dados[i+1];
-            }
-            tamanho--;
-        }
-
-        int encontrar(const T&){
-            for (int i = 0; i < tamanho; i++){
-                if (dados[i] == T){
-                    return i;
-                }
-            }
-            return -1;
-        };
-
         T& obter(int pos){
             if (pos < 0 || pos >= tamanho) {
                 throw std::out_of_range("Erro: índice inválido!");
