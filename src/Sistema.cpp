@@ -51,7 +51,15 @@ void Sistema::seguir_usuario(int id1, int id2){
     grafo_social.criar_aresta(no1.id_grafo, no2.id_grafo, false);
 };
 
-void Sistema::remover_seguimento_usuario(int id1, int id2){};
+void Sistema::remover_seguimento_usuario(int id1, int id2){
+    const No& no_usuario1 = dicionario.get_no_usuario_grafo_social(id1);
+    int id_interno1 = no_usuario1.id_grafo;
+
+    const No& no_usuario2 = dicionario.get_no_usuario_grafo_social(id2);
+    int id_interno2 = no_usuario2.id_grafo;
+
+    grafo_social.remover_aresta(id_interno1, id_interno2, false);
+};
 
 void Sistema::consultar_temas(int id_usuario) const{
     const No& no_usuario = dicionario.get_no_usuario_grafo_temas(id_usuario);
