@@ -89,6 +89,16 @@ public:
         if (bidirecional) nos[no2->id_grafo].inserir(no1);
     }
 
+    void remover_aresta(No* no1, No* no2, bool bidirecional){
+        int pos = nos[no1->id_grafo].encontrar(no2);
+        if (pos == -1) return;
+        nos[no1->id_grafo].remover(pos);
+        if (!bidirecional) return;
+        pos = nos[no2->id_grafo].encontrar(no1);
+        if (pos == -1) return;
+        nos[no2->id_grafo].remover(pos);
+    }
+
     void aumentar_tamanho(){
         Lista<No*> vizinhos_vazios; 
         nos.inserir(vizinhos_vazios);
@@ -274,13 +284,13 @@ public:
         return vizinhos;
     }
 
-    bool checar_aresta(int id_iterno_grafo1, int id_interno_grafo2) const {
+    bool checar_aresta(int id_interno_grafo1, int id_interno_grafo2) const {
         if (tipo == GRAFO_MATRIZ) {
-            const Lista<int>& linha1 = (*matriz)[id_iterno_grafo1];
+            const Lista<int>& linha1 = (*matriz)[id_interno_grafo1];
             if (linha1[id_interno_grafo2] == 1) return true;
         } 
         else if (tipo == GRAFO_LISTA) {
-            const Lista<No*>& vizinhos = (*lista)[id_iterno_grafo1];
+            const Lista<No*>& vizinhos = (*lista)[id_interno_grafo1];
             for (int i = 0; i < vizinhos.get_tamanho(); i++){
                 if (vizinhos[i]->id_grafo == id_interno_grafo2){
                     return true;
@@ -288,6 +298,15 @@ public:
             }    
         }
         return false;
+    }
+
+    void remover_aresta(int id_interno_grafo1, int id_interno_grafo2, bool bidirecional) {
+        if (tipo == GRAFO_MATRIZ) {
+            matriz->alterar_valor(id_interno_grafo1, id_interno_grafo2, 0, bidirecional);
+        } 
+        else if (tipo == GRAFO_LISTA) {
+            lista->remover_aresta(nos[id_interno_grafo1], nos[id_interno_grafo2], bidirecional);
+        }
     }
 
 };
