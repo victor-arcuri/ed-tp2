@@ -1,5 +1,5 @@
 #include "Usuario.hpp"
-
+Usuario::Usuario() : id(-1), nome(""), idade(0) {}
 Usuario::Usuario(int id, const std::string& nome, int idade): id(id), nome(nome), idade(idade){};
 Usuario::~Usuario(){};
 

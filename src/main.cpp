@@ -21,6 +21,7 @@ int main() {
         tipo_inicial = GRAFO_LISTA;
     }
     Sistema sistema(tipo_inicial);
+    std::cout << "A " << tipo_armazenamento << "\n";
     string comando;
 	while (cin >> comando) {
 		

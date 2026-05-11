@@ -1,4 +1,6 @@
 #include "Tema.hpp"
+
+Tema::Tema() : id(-1), nome(""), tipo(PESSOAL) {}
 Tema::Tema(int id, const std::string& nome, TipoTema tipo): id(id), nome(nome), tipo(tipo){};
 Tema::~Tema(){};
 

@@ -14,6 +14,7 @@ class Tema {
     TipoTema tipo;
 
 public:
+    Tema();
     Tema(int id, const std::string& nome, TipoTema tipo);
     ~Tema();
     

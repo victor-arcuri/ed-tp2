@@ -28,7 +28,7 @@ public:
     ~Sistema();
 
     void alterar_armazenamento(TipoGrafo tipo);
-    const int adicionar_usuario(const std::string& nome, int idade, Lista<int> tema_ids);
+    const int adicionar_usuario(const std::string& nome, int idade, const Lista<int>& tema_ids);
     const int adicionar_tema(const std::string& nome, TipoTema tipo);
     void seguir_usuario(int id1, int id2);
     void remover_seguimento_usuario(int id1, int id2);

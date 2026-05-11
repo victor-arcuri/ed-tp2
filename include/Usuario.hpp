@@ -9,6 +9,7 @@ class Usuario {
     int idade;
 
 public:
+    Usuario();
     Usuario(int id, const std::string& nome, int idade);
     ~Usuario();
     

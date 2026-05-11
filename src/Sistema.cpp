@@ -53,7 +53,7 @@ void Sistema::alterar_armazenamento(TipoGrafo tipo){
     std::cout << "A " << tipo << "\n";
 };
 
-const int Sistema::adicionar_usuario(const std::string& nome, int idade, Lista<int> tema_ids){
+const int Sistema::adicionar_usuario(const std::string& nome, int idade, const Lista<int>& tema_ids){
     Usuario usuario = Usuario(num_usuarios, nome, idade);
     usuarios.inserir(usuario);
     int id_interno_social = grafo_social.criar_no(USUARIO, num_usuarios);
