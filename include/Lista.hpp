@@ -30,7 +30,7 @@ class Lista{
             delete[] dados;
         };
         
-        int get_tamanho(){
+        int get_tamanho() const{
             return tamanho;
         }
 

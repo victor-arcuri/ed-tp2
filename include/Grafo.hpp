@@ -131,6 +131,14 @@ public:
         if (matriz != nullptr) delete matriz;
         if (lista != nullptr) delete lista;
     }
+
+    const No* retornar_no_por_id_interno(int id_grafo) const {
+        if (id_grafo >= 0 && id_grafo < nos.get_tamanho()) {
+            return nos[id_grafo];
+        }
+        return nullptr;
+    }
+
     int criar_no(TipoNo tipo, int id){
         No* novo_no = new No;
         novo_no->id_externo = id;
