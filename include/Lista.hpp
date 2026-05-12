@@ -6,78 +6,91 @@
 #define CAPACIDADE_INICIAL 2
 #define FATOR_CRESCIMENTO 2
 
-template<typename T>
-class Lista {
-    int capacidade;
-    int tamanho;
-    T* dados;
+template <typename T> class Lista {
+	int capacidade;
+	int tamanho;
+	T *dados;
 
-    void redimensionar() {
-        capacidade *= FATOR_CRESCIMENTO;
-        T* novos_dados = new T[capacidade];
-        for (int i = 0; i < tamanho; i++) {
-            novos_dados[i] = dados[i];
-        }
-        delete[] dados;
-        dados = novos_dados;
-    }
+	void redimensionar() {
+		capacidade *= FATOR_CRESCIMENTO;
+		T *novos_dados = new T[capacidade];
+		for (int i = 0; i < tamanho; i++) {
+			novos_dados[i] = dados[i];
+		}
+		delete[] dados;
+		dados = novos_dados;
+	}
 
-public:
-    Lista() : capacidade(CAPACIDADE_INICIAL), tamanho(0) {
-        dados = new T[capacidade];
-    }
+  public:
+	Lista() : capacidade(CAPACIDADE_INICIAL), tamanho(0) { dados = new T[capacidade]; }
 
-    ~Lista() {
-        delete[] dados;
-    }
+	~Lista() { delete[] dados; }
 
-    int get_tamanho() const {
-        return tamanho;
-    }
+	Lista(const Lista &outro) : capacidade(outro.capacidade), tamanho(outro.tamanho) {
+		dados = new T[capacidade];
+		for (int i = 0; i < tamanho; i++) {
+			dados[i] = outro.dados[i];
+		}
+	}
 
-    void inserir(const T& elemento) {
-        if (tamanho == capacidade) {
-            redimensionar();
-        }
-        dados[tamanho] = elemento;
-        tamanho++;
-    }
+	Lista &operator=(const Lista &outro) {
+		if (this == &outro)
+			return *this;
+		delete[] dados;
+		capacidade = outro.capacidade;
+		tamanho = outro.tamanho;
+		dados = new T[capacidade];
+		for (int i = 0; i < tamanho; i++) {
+			dados[i] = outro.dados[i];
+		}
+		return *this;
+	}
 
-    int encontrar(const T& elemento) const {
-        for (int i = 0; i < tamanho; i++) {
-            if (dados[i] == elemento) {
-                return i;
-            }
-        }
-        return -1;
-    }
+	int get_tamanho() const { return tamanho; }
 
-    void remover(int pos) {
-        if (pos < 0 || pos >= tamanho) {
-            throw std::out_of_range("Erro: índice inválido!");
-        }
-        for (int i = pos; i < tamanho - 1; i++) {
-            dados[i] = dados[i + 1];
-        }
-        tamanho--;
-    }
+	void inserir(const T &elemento) {
+		if (tamanho == capacidade) {
+			redimensionar();
+		}
+		dados[tamanho] = elemento;
+		tamanho++;
+	}
 
-    T& obter(int pos) {
-        if (pos < 0 || pos >= tamanho) {
-            throw std::out_of_range("Erro: índice inválido!");
-        }
-        return dados[pos];
-    }
+	int encontrar(const T &elemento) const {
+		for (int i = 0; i < tamanho; i++) {
+			if (dados[i] == elemento) {
+				return i;
+			}
+		}
+		return -1;
+	}
 
-    const T& obter(int pos) const {
-        if (pos < 0 || pos >= tamanho) {
-            throw std::out_of_range("Erro: índice inválido!");
-        }
-        return dados[pos];
-    }
+	void remover(int pos) {
+		if (pos < 0 || pos >= tamanho) {
+			throw std::out_of_range("Erro: índice inválido!");
+		}
+		for (int i = pos; i < tamanho - 1; i++) {
+			dados[i] = dados[i + 1];
+		}
+		tamanho--;
+	}
 
-    T& operator[](int pos) { return obter(pos); }
-    const T& operator[](int pos) const { return obter(pos); }
+	T &obter(int pos) {
+		if (pos < 0 || pos >= tamanho) {
+			throw std::out_of_range("Erro: índice inválido!");
+		}
+		return dados[pos];
+	}
+
+	const T &obter(int pos) const {
+		if (pos < 0 || pos >= tamanho) {
+			throw std::out_of_range("Erro: índice inválido!");
+		}
+		return dados[pos];
+	}
+
+	T &operator[](int pos) { return obter(pos); }
+	const T &operator[](int pos) const { return obter(pos); }
 };
 
 #endif

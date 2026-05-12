@@ -1,45 +1,43 @@
 #ifndef SISTEMA_HPP
 #define SISTEMA_HPP
 
-#include "Usuario.hpp"
-#include "Tema.hpp"
-#include "Lista.hpp"
 #include "Dicionario.hpp"
 #include "Grafo.hpp"
+#include "Lista.hpp"
+#include "Tema.hpp"
+#include "Usuario.hpp"
 
 class Sistema {
-    Lista<Usuario> usuarios;
-    Lista<Tema> temas;
-    Grafo grafo_temas;
-    Grafo grafo_social;
-    Dicionario dicionario;
+	Lista<Usuario> usuarios;
+	Lista<Tema> temas;
+	Grafo grafo_temas;
+	Grafo grafo_social;
+	Dicionario dicionario;
 
-    int num_usuarios;
-    int num_temas;
+	int num_usuarios;
+	int num_temas;
 
-    void ordenar_vizinhos(Lista<No*>& lista) const;
-    void quickSort_internos(Lista<No*>& lista, int inicio, int fim) const;
-    int particionar_vizinhos(Lista<No*>& lista, int inicio, int fim) const;
-    void trocar_nos(Lista<No*>& lista, int i, int j) const;
+	void ordenar_vizinhos(Lista<No *> &lista) const;
+	void quickSort_internos(Lista<No *> &lista, int inicio, int fim) const;
+	int particionar_vizinhos(Lista<No *> &lista, int inicio, int fim) const;
+	void trocar_nos(Lista<No *> &lista, int i, int j) const;
 
+  public:
+	Sistema(TipoGrafo tipoInicial);
+	~Sistema();
 
-public:
-    Sistema(TipoGrafo tipoInicial);
-    ~Sistema();
-
-    void alterar_armazenamento(TipoGrafo tipo);
-    const int adicionar_usuario(const std::string& nome, int idade, const Lista<int>& tema_ids);
-    const int adicionar_tema(const std::string& nome, TipoTema tipo);
-    void seguir_usuario(int id1, int id2);
-    void remover_seguimento_usuario(int id1, int id2);
-    void consultar_temas(int id_usuario) const;
-    void consultar_seguidores(int id_usuario) const;
-    void consultar_seguidos(int id_usuario) const;
-    void consultar_amigos(int id_usuario) const;
-    void consultar_relacao(int id1, int id2) const;
-    void consultar_interesse(int id_usuario, int id_tema) const;
-    void consultar_popularidade(int id_tema) const;
-    
+	void alterar_armazenamento(TipoGrafo tipo);
+	const int adicionar_usuario(const std::string &nome, int idade, const Lista<int> &tema_ids);
+	const int adicionar_tema(const std::string &nome, TipoTema tipo);
+	void seguir_usuario(int id1, int id2);
+	void remover_seguimento_usuario(int id1, int id2);
+	void consultar_temas(int id_usuario) const;
+	void consultar_seguidores(int id_usuario) const;
+	void consultar_seguidos(int id_usuario) const;
+	void consultar_amigos(int id_usuario) const;
+	void consultar_relacao(int id1, int id2) const;
+	void consultar_interesse(int id_usuario, int id_tema) const;
+	void consultar_popularidade(int id_tema) const;
 };
 
 #endif

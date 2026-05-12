@@ -3,27 +3,24 @@
 
 #include <string>
 
-enum TipoTema {
-    ACADEMICO,
-    PESSOAL
-};
+enum TipoTema { ACADEMICO, PESSOAL };
 
 class Tema {
-    int id;
-    std::string nome;
-    TipoTema tipo;
+	int id;
+	std::string nome;
+	TipoTema tipo;
 
-public:
-    Tema();
-    Tema(int id, const std::string& nome, TipoTema tipo);
-    ~Tema();
-    
-    int get_tipo() const;
-    int get_id() const;
-    const std::string& get_nome() const;
+  public:
+	Tema();
+	Tema(int id, const std::string &nome, TipoTema tipo);
+	~Tema();
 
-    void set_tipo(TipoTema tipo);
-    void set_nome(const std::string& nome);
+	int get_tipo() const;
+	int get_id() const;
+	const std::string &get_nome() const;
+
+	void set_tipo(TipoTema tipo);
+	void set_nome(const std::string &nome);
 };
 
 #endif
