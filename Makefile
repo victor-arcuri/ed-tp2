@@ -4,6 +4,7 @@ CXXFLAGS = -Wall -std=c++11 -Iinclude
 EXEC = bin/tp2.out
 
 OBJS = obj/main.o obj/Dicionario.o obj/Grafo.o obj/Sistema.o obj/Tema.o obj/Usuario.o
+ZIP = tp2.zip
 
 all: directories $(EXEC)
 
@@ -32,4 +33,7 @@ directories:
 	@mkdir -p obj bin
 
 clean:
-	rm -f obj/*.o bin/tp2.out
+	rm -f obj/*.o bin/tp2.out ZIP
+
+zip:
+	zip -r ZIP Makefile src/ include/ bin/ obj/ -x "bin/*" -x "obj/*" -x "*/.git*"

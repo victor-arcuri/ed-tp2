@@ -54,7 +54,7 @@ int main() {
 			cin >> nome >> idade;
 
 			string resto_da_linha;
-			getline(cin >> ws, resto_da_linha);
+			getline(cin, resto_da_linha);
 
 			stringstream ss(resto_da_linha);
 			Lista<int> id_temas;
