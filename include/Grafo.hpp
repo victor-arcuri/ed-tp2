@@ -46,7 +46,27 @@ class ListaAdjacencia {
 	Lista<No *> &operator[](int index);
 };
 
-enum TipoGrafo { GRAFO_MATRIZ, GRAFO_LISTA };
+struct Aresta {
+	int id_origem;
+	int id_destino;
+};
+
+class ListaArestas {
+	Lista<Aresta> arestas;
+
+  public:
+	ListaArestas();
+	~ListaArestas();
+
+	void adicionar_aresta(int id1, int id2, bool bidirecional);
+	void remover_aresta(int id1, int id2, bool bidirecional);
+	bool checar_aresta(int id1, int id2) const;
+	Lista<int> obter_destinos_de(int id_origem) const;
+	Lista<int> obter_origens_de(int id_destino) const;
+	const Lista<Aresta> &get_arestas() const;
+};
+
+enum TipoGrafo { GRAFO_MATRIZ, GRAFO_LISTA, GRAFO_ARESTA };
 
 class Grafo {
 	Lista<No *> nos;
@@ -55,6 +75,7 @@ class Grafo {
 	TipoGrafo tipo;
 	MatrizAdjacencia *matriz;
 	ListaAdjacencia *lista;
+	ListaArestas *lista_arestas;
 
   public:
 	Grafo(TipoGrafo tipo);

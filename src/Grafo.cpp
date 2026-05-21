@@ -87,14 +87,83 @@ void ListaAdjacencia::aumentar_tamanho() {
 
 Lista<No *> &ListaAdjacencia::operator[](int index) { return nos[index]; }
 
+// --- ListaArestas ---
+
+ListaArestas::ListaArestas() {}
+
+ListaArestas::~ListaArestas() {}
+
+void ListaArestas::adicionar_aresta(int id1, int id2, bool bidirecional) {
+	Aresta a;
+	a.id_origem = id1;
+	a.id_destino = id2;
+	arestas.inserir(a);
+	if (bidirecional) {
+		Aresta b;
+		b.id_origem = id2;
+		b.id_destino = id1;
+		arestas.inserir(b);
+	}
+}
+
+void ListaArestas::remover_aresta(int id1, int id2, bool bidirecional) {
+	for (int i = 0; i < arestas.get_tamanho(); i++) {
+		if (arestas[i].id_origem == id1 && arestas[i].id_destino == id2) {
+			arestas.remover(i);
+			break;
+		}
+	}
+	if (!bidirecional)
+		return;
+	for (int i = 0; i < arestas.get_tamanho(); i++) {
+		if (arestas[i].id_origem == id2 && arestas[i].id_destino == id1) {
+			arestas.remover(i);
+			break;
+		}
+	}
+}
+
+bool ListaArestas::checar_aresta(int id1, int id2) const {
+	for (int i = 0; i < arestas.get_tamanho(); i++) {
+		if (arestas[i].id_origem == id1 && arestas[i].id_destino == id2)
+			return true;
+	}
+	return false;
+}
+
+Lista<int> ListaArestas::obter_destinos_de(int id_origem) const {
+	Lista<int> destinos;
+	for (int i = 0; i < arestas.get_tamanho(); i++) {
+		if (arestas[i].id_origem == id_origem)
+			destinos.inserir(arestas[i].id_destino);
+	}
+	return destinos;
+}
+
+Lista<int> ListaArestas::obter_origens_de(int id_destino) const {
+	Lista<int> origens;
+	for (int i = 0; i < arestas.get_tamanho(); i++) {
+		if (arestas[i].id_destino == id_destino)
+			origens.inserir(arestas[i].id_origem);
+	}
+	return origens;
+}
+
+const Lista<Aresta> &ListaArestas::get_arestas() const { return arestas; }
+
+// --- Grafo ---
+
 Grafo::Grafo(TipoGrafo tipo) : id_nos(0), tipo(tipo) {
 	matriz = nullptr;
 	lista = nullptr;
+	lista_arestas = nullptr;
 
 	if (tipo == GRAFO_MATRIZ) {
 		matriz = new MatrizAdjacencia(0);
-	} else {
+	} else if (tipo == GRAFO_LISTA) {
 		lista = new ListaAdjacencia(0);
+	} else if (tipo == GRAFO_ARESTA) {
+		lista_arestas = new ListaArestas();
 	}
 }
 
@@ -106,6 +175,8 @@ Grafo::~Grafo() {
 		delete matriz;
 	if (lista != nullptr)
 		delete lista;
+	if (lista_arestas != nullptr)
+		delete lista_arestas;
 }
 
 const No *Grafo::retornar_no_por_id_interno(int id_grafo) const {
@@ -127,6 +198,7 @@ int Grafo::criar_no(TipoNo tipo, int id) {
 	} else if (this->tipo == GRAFO_LISTA) {
 		lista->aumentar_tamanho();
 	}
+	// GRAFO_ARESTA: sem slot por nó — arestas são armazenadas globalmente
 	return id_nos - 1;
 }
 
@@ -135,6 +207,8 @@ void Grafo::criar_aresta(int id_grafo1, int id_grafo2, bool bidirecional) {
 		matriz->alterar_valor(id_grafo1, id_grafo2, 1, bidirecional);
 	} else if (this->tipo == GRAFO_LISTA) {
 		lista->adicionar_aresta(nos[id_grafo1], nos[id_grafo2], bidirecional);
+	} else if (this->tipo == GRAFO_ARESTA) {
+		lista_arestas->adicionar_aresta(id_grafo1, id_grafo2, bidirecional);
 	}
 }
 
@@ -144,28 +218,70 @@ void Grafo::trocar_tipo(TipoGrafo novo_tipo) {
 
 	int qtd_nos = nos.get_tamanho();
 
-	if (novo_tipo == GRAFO_MATRIZ) {
-		matriz = new MatrizAdjacencia(qtd_nos);
-		for (int i = 0; i < qtd_nos; i++) {
-			Lista<No *> &vizinhos = (*lista)[i];
-			for (int j = 0; j < vizinhos.get_tamanho(); j++) {
-				int id_vizinho = vizinhos[j]->id_grafo;
-				matriz->alterar_valor(i, id_vizinho, 1, false);
-			}
-		}
-		delete lista;
-		lista = nullptr;
-	} else if (novo_tipo == GRAFO_LISTA) {
-		lista = new ListaAdjacencia(qtd_nos);
-		for (int i = 0; i < qtd_nos; i++) {
-			for (int j = 0; j < qtd_nos; j++) {
-				if (matriz->obter_valor(i, j) == 1) {
-					lista->adicionar_aresta(nos[i], nos[j], false);
+	if (this->tipo == GRAFO_LISTA) {
+		if (novo_tipo == GRAFO_MATRIZ) {
+			matriz = new MatrizAdjacencia(qtd_nos);
+			for (int i = 0; i < qtd_nos; i++) {
+				Lista<No *> &vizinhos = (*lista)[i];
+				for (int j = 0; j < vizinhos.get_tamanho(); j++) {
+					int id_vizinho = vizinhos[j]->id_grafo;
+					matriz->alterar_valor(i, id_vizinho, 1, false);
 				}
 			}
+			delete lista;
+			lista = nullptr;
+		} else if (novo_tipo == GRAFO_ARESTA) {
+			lista_arestas = new ListaArestas();
+			for (int i = 0; i < qtd_nos; i++) {
+				Lista<No *> &vizinhos = (*lista)[i];
+				for (int j = 0; j < vizinhos.get_tamanho(); j++) {
+					lista_arestas->adicionar_aresta(i, vizinhos[j]->id_grafo, false);
+				}
+			}
+			delete lista;
+			lista = nullptr;
 		}
-		delete matriz;
-		matriz = nullptr;
+	} else if (this->tipo == GRAFO_MATRIZ) {
+		if (novo_tipo == GRAFO_LISTA) {
+			lista = new ListaAdjacencia(qtd_nos);
+			for (int i = 0; i < qtd_nos; i++) {
+				for (int j = 0; j < qtd_nos; j++) {
+					if (matriz->obter_valor(i, j) == 1) {
+						lista->adicionar_aresta(nos[i], nos[j], false);
+					}
+				}
+			}
+			delete matriz;
+			matriz = nullptr;
+		} else if (novo_tipo == GRAFO_ARESTA) {
+			lista_arestas = new ListaArestas();
+			for (int i = 0; i < qtd_nos; i++) {
+				for (int j = 0; j < qtd_nos; j++) {
+					if (matriz->obter_valor(i, j) == 1) {
+						lista_arestas->adicionar_aresta(i, j, false);
+					}
+				}
+			}
+			delete matriz;
+			matriz = nullptr;
+		}
+	} else if (this->tipo == GRAFO_ARESTA) {
+		const Lista<Aresta> &todas = lista_arestas->get_arestas();
+		if (novo_tipo == GRAFO_LISTA) {
+			lista = new ListaAdjacencia(qtd_nos);
+			for (int i = 0; i < todas.get_tamanho(); i++) {
+				lista->adicionar_aresta(nos[todas[i].id_origem], nos[todas[i].id_destino], false);
+			}
+			delete lista_arestas;
+			lista_arestas = nullptr;
+		} else if (novo_tipo == GRAFO_MATRIZ) {
+			matriz = new MatrizAdjacencia(qtd_nos);
+			for (int i = 0; i < todas.get_tamanho(); i++) {
+				matriz->alterar_valor(todas[i].id_origem, todas[i].id_destino, 1, false);
+			}
+			delete lista_arestas;
+			lista_arestas = nullptr;
+		}
 	}
 	this->tipo = novo_tipo;
 }
@@ -181,6 +297,13 @@ Lista<No *> Grafo::obter_vizinhos_apontados_por(int id_interno_grafo) const {
 		return vizinhos;
 	} else if (tipo == GRAFO_LISTA) {
 		return (*lista)[id_interno_grafo];
+	} else if (tipo == GRAFO_ARESTA) {
+		Lista<No *> vizinhos;
+		Lista<int> destinos = lista_arestas->obter_destinos_de(id_interno_grafo);
+		for (int i = 0; i < destinos.get_tamanho(); i++) {
+			vizinhos.inserir(nos[destinos[i]]);
+		}
+		return vizinhos;
 	}
 	return Lista<No *>();
 }
@@ -203,6 +326,13 @@ Lista<No *> Grafo::obter_vizinhos_que_apontam_para(int id_iterno_grafo) const {
 					break;
 				}
 			}
+		}
+		return vizinhos;
+	} else if (tipo == GRAFO_ARESTA) {
+		Lista<No *> vizinhos;
+		Lista<int> origens = lista_arestas->obter_origens_de(id_iterno_grafo);
+		for (int i = 0; i < origens.get_tamanho(); i++) {
+			vizinhos.inserir(nos[origens[i]]);
 		}
 		return vizinhos;
 	}
@@ -237,6 +367,14 @@ Lista<No *> Grafo::obter_vizinhos_bidirecional(int id_iterno_grafo) const {
 			if (bidirecional)
 				vizinhos.inserir(possivel_bidirecional);
 		}
+	} else if (tipo == GRAFO_ARESTA) {
+		Lista<int> destinos = lista_arestas->obter_destinos_de(id_iterno_grafo);
+		for (int i = 0; i < destinos.get_tamanho(); i++) {
+			int id_dest = destinos[i];
+			if (lista_arestas->checar_aresta(id_dest, id_iterno_grafo)) {
+				vizinhos.inserir(nos[id_dest]);
+			}
+		}
 	}
 	return vizinhos;
 }
@@ -252,6 +390,8 @@ bool Grafo::checar_aresta(int id_interno_grafo1, int id_interno_grafo2) const {
 			if (vizinhos[i]->id_grafo == id_interno_grafo2)
 				return true;
 		}
+	} else if (tipo == GRAFO_ARESTA) {
+		return lista_arestas->checar_aresta(id_interno_grafo1, id_interno_grafo2);
 	}
 	return false;
 }
@@ -261,5 +401,7 @@ void Grafo::remover_aresta(int id_interno_grafo1, int id_interno_grafo2, bool bi
 		matriz->alterar_valor(id_interno_grafo1, id_interno_grafo2, 0, bidirecional);
 	} else if (tipo == GRAFO_LISTA) {
 		lista->remover_aresta(nos[id_interno_grafo1], nos[id_interno_grafo2], bidirecional);
+	} else if (tipo == GRAFO_ARESTA) {
+		lista_arestas->remover_aresta(id_interno_grafo1, id_interno_grafo2, bidirecional);
 	}
 }

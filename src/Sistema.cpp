@@ -48,7 +48,8 @@ void Sistema::ordenar_vizinhos(Lista<No *> &lista) const {
 void Sistema::alterar_armazenamento(TipoGrafo tipo) {
 	grafo_social.trocar_tipo(tipo);
 	grafo_temas.trocar_tipo(tipo);
-	std::cout << "A " << (tipo == GRAFO_LISTA ? "L" : "M") << "\n";
+	std::string modo = (tipo == GRAFO_LISTA) ? "L" : (tipo == GRAFO_MATRIZ) ? "M" : "E";
+	std::cout << "A " << modo << "\n";
 };
 
 const int Sistema::adicionar_usuario(const std::string &nome, int idade, const Lista<int> &tema_ids) {
@@ -201,3 +202,122 @@ void Sistema::consultar_popularidade(int id_tema) const {
 	std::string nome_tema = temas[no_tema.id_externo].get_nome();
 	std::cout << "F " << nome_tema << " " << quant_interessados << "\n";
 };
+
+Lista<int> Sistema::bfs_distancias_social(int id_interno_social) const {
+	Lista<int> dist;
+	for (int i = 0; i < num_usuarios; i++) {
+		dist.inserir(-1);
+	}
+
+	Lista<int> fila;
+	int frente = 0;
+
+	dist[id_interno_social] = 0;
+	fila.inserir(id_interno_social);
+
+	while (frente < fila.get_tamanho()) {
+		int atual = fila[frente++];
+		Lista<No *> vizinhos = grafo_social.obter_vizinhos_apontados_por(atual);
+		for (int i = 0; i < vizinhos.get_tamanho(); i++) {
+			int id_viz = vizinhos[i]->id_grafo;
+			if (dist[id_viz] == -1) {
+				dist[id_viz] = dist[atual] + 1;
+				fila.inserir(id_viz);
+			}
+		}
+	}
+	return dist;
+}
+
+float Sistema::calcular_jaccard(int id_temas_u, int id_temas_v) const {
+	Lista<No *> temas_u = grafo_temas.obter_vizinhos_apontados_por(id_temas_u);
+	Lista<No *> temas_v = grafo_temas.obter_vizinhos_apontados_por(id_temas_v);
+
+	int tam_u = temas_u.get_tamanho();
+	int tam_v = temas_v.get_tamanho();
+
+	if (tam_u == 0 && tam_v == 0)
+		return 0.0f;
+
+	int intersecao = 0;
+	for (int i = 0; i < tam_u; i++) {
+		for (int j = 0; j < tam_v; j++) {
+			if (temas_u[i]->id_externo == temas_v[j]->id_externo) {
+				intersecao++;
+				break;
+			}
+		}
+	}
+
+	int uniao = tam_u + tam_v - intersecao;
+	if (uniao == 0)
+		return 0.0f;
+	return (float)intersecao / (float)uniao;
+}
+
+struct Candidato {
+	int id_externo;
+	float score;
+};
+
+static void insertion_sort_candidatos(Lista<Candidato> &cands) {
+	for (int i = 1; i < cands.get_tamanho(); i++) {
+		Candidato chave = cands[i];
+		int j = i - 1;
+		while (j >= 0) {
+			bool deve_mover;
+			if (cands[j].score > chave.score)
+				deve_mover = false;
+			else if (cands[j].score < chave.score)
+				deve_mover = true;
+			else
+				deve_mover = cands[j].id_externo > chave.id_externo;
+			if (!deve_mover)
+				break;
+			cands[j + 1] = cands[j];
+			j--;
+		}
+		cands[j + 1] = chave;
+	}
+}
+
+void Sistema::consultar_recomendacao(int id_usuario, int topk, float peso_prox, float peso_afin) const {
+	const No &no_social_u = dicionario.get_no_usuario_grafo_social(id_usuario);
+	const No &no_temas_u = dicionario.get_no_usuario_grafo_temas(id_usuario);
+	int id_s_u = no_social_u.id_grafo;
+	int id_t_u = no_temas_u.id_grafo;
+
+	Lista<int> dist = bfs_distancias_social(id_s_u);
+
+	Lista<Candidato> candidatos;
+	for (int id_ext_v = 0; id_ext_v < num_usuarios; id_ext_v++) {
+		if (id_ext_v == id_usuario)
+			continue;
+		const No &no_social_v = dicionario.get_no_usuario_grafo_social(id_ext_v);
+		int id_s_v = no_social_v.id_grafo;
+		if (grafo_social.checar_aresta(id_s_u, id_s_v))
+			continue;
+
+		float p = 0.0f;
+		if (dist[id_s_v] > 0)
+			p = 2.0f / (float)dist[id_s_v];
+
+		const No &no_temas_v = dicionario.get_no_usuario_grafo_temas(id_ext_v);
+		int id_t_v = no_temas_v.id_grafo;
+		float a = calcular_jaccard(id_t_u, id_t_v);
+
+		Candidato c;
+		c.id_externo = id_ext_v;
+		c.score = peso_prox * p + peso_afin * a;
+		candidatos.inserir(c);
+	}
+
+	insertion_sort_candidatos(candidatos);
+
+	int qtd_saida = (topk < candidatos.get_tamanho()) ? topk : candidatos.get_tamanho();
+	std::cout << "P " << usuarios[id_usuario].get_nome();
+	for (int i = 0; i < qtd_saida; i++) {
+		std::cout << " " << usuarios[candidatos[i].id_externo].get_nome();
+	}
+	std::cout << "\n";
+}

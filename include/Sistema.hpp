@@ -22,6 +22,9 @@ class Sistema {
 	int particionar_vizinhos(Lista<No *> &lista, int inicio, int fim) const;
 	void trocar_nos(Lista<No *> &lista, int i, int j) const;
 
+	Lista<int> bfs_distancias_social(int id_interno_social) const;
+	float calcular_jaccard(int id_temas_u, int id_temas_v) const;
+
   public:
 	Sistema(TipoGrafo tipoInicial);
 	~Sistema();
@@ -38,6 +41,7 @@ class Sistema {
 	void consultar_relacao(int id1, int id2) const;
 	void consultar_interesse(int id_usuario, int id_tema) const;
 	void consultar_popularidade(int id_tema) const;
+	void consultar_recomendacao(int id_usuario, int topk, float peso_prox, float peso_afin) const;
 };
 
 #endif

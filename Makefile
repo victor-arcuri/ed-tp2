@@ -36,4 +36,4 @@ clean:
 	rm -f obj/*.o bin/tp2.out ZIP
 
 zip:
-	zip -r ZIP Makefile src/ include/ bin/ obj/ -x "bin/*" -x "obj/*" -x "*/.git*"
+	zip -r $(ZIP) Makefile src/ include/ bin/ obj/ -x "bin/*" -x "obj/*" -x "*/.git*"

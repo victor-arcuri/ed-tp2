@@ -16,6 +16,8 @@ int main() {
 	TipoGrafo tipo_inicial;
 	if (tipo_armazenamento == 'M') {
 		tipo_inicial = GRAFO_MATRIZ;
+	} else if (tipo_armazenamento == 'E') {
+		tipo_inicial = GRAFO_ARESTA;
 	} else {
 		tipo_inicial = GRAFO_LISTA;
 	}
@@ -33,6 +35,8 @@ int main() {
 				tipo = GRAFO_LISTA;
 			} else if (tipo_ch == 'M') {
 				tipo = GRAFO_MATRIZ;
+			} else if (tipo_ch == 'E') {
+				tipo = GRAFO_ARESTA;
 			}
 			sistema.alterar_armazenamento(tipo);
 		} else if (comando == "T") {
@@ -101,6 +105,11 @@ int main() {
 			int id_tema;
 			cin >> id_tema;
 			sistema.consultar_popularidade(id_tema);
+		} else if (comando == "P") {
+			int id_usuario, topk;
+			float peso_prox, peso_afin;
+			cin >> id_usuario >> topk >> peso_prox >> peso_afin;
+			sistema.consultar_recomendacao(id_usuario, topk, peso_prox, peso_afin);
 		}
 	}
 	return 0;
