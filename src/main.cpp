@@ -107,7 +107,7 @@ int main() {
 			sistema.consultar_popularidade(id_tema);
 		} else if (comando == "P") {
 			int id_usuario, topk;
-			float peso_prox, peso_afin;
+			double peso_prox, peso_afin;
 			cin >> id_usuario >> topk >> peso_prox >> peso_afin;
 			sistema.consultar_recomendacao(id_usuario, topk, peso_prox, peso_afin);
 		}

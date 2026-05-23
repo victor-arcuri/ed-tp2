@@ -212,6 +212,12 @@ void Grafo::criar_aresta(int id_grafo1, int id_grafo2, bool bidirecional) {
 	}
 }
 
+/**
+ * A migração percorre todas as combinações de representação de origem e destino
+ * (LISTA↔MATRIZ, LISTA↔ARESTA, MATRIZ↔ARESTA). Em cada caso, a nova estrutura
+ * é alocada e populada a partir da antiga antes de a antiga ser destruída,
+ * garantindo que nenhuma aresta seja perdida durante a transição.
+ */
 void Grafo::trocar_tipo(TipoGrafo novo_tipo) {
 	if (this->tipo == novo_tipo)
 		return;

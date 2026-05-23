@@ -1,12 +1,19 @@
 #include "Sistema.hpp"
 
+#include <cmath>
 #include <iostream>
 
 Sistema::Sistema(TipoGrafo tipoInicial)
 	: grafo_temas(tipoInicial), grafo_social(tipoInicial), dicionario(usuarios, temas, grafo_temas, grafo_social),
-	  num_usuarios(0), num_temas(0) {
+	  num_usuarios(0), num_temas(0), primeiro_output(true) {
 
 	  };
+
+void Sistema::nova_linha() const {
+	if (!primeiro_output)
+		std::cout << "\n";
+	primeiro_output = false;
+}
 
 Sistema::~Sistema() {};
 
@@ -49,7 +56,8 @@ void Sistema::alterar_armazenamento(TipoGrafo tipo) {
 	grafo_social.trocar_tipo(tipo);
 	grafo_temas.trocar_tipo(tipo);
 	std::string modo = (tipo == GRAFO_LISTA) ? "L" : (tipo == GRAFO_MATRIZ) ? "M" : "E";
-	std::cout << "A " << modo << "\n";
+	nova_linha();
+	std::cout << "A " << modo;
 };
 
 const int Sistema::adicionar_usuario(const std::string &nome, int idade, const Lista<int> &tema_ids) {
@@ -68,7 +76,8 @@ const int Sistema::adicionar_usuario(const std::string &nome, int idade, const L
 	}
 	int id_criado = num_usuarios;
 	num_usuarios++;
-	std::cout << "U " << id_criado << "\n";
+	nova_linha();
+	std::cout << "U " << id_criado;
 	return id_criado;
 };
 
@@ -79,7 +88,8 @@ const int Sistema::adicionar_tema(const std::string &nome, TipoTema tipo) {
 	dicionario.registrar_tema_temas(id_interno_temas);
 	int id_criado = num_temas;
 	num_temas++;
-	std::cout << "T " << id_criado << "\n";
+	nova_linha();
+	std::cout << "T " << id_criado;
 	return id_criado;
 };
 
@@ -89,7 +99,8 @@ void Sistema::seguir_usuario(int id1, int id2) {
 	grafo_social.criar_aresta(no1.id_grafo, no2.id_grafo, false);
 	std::string nome_1 = usuarios[no1.id_externo].get_nome();
 	std::string nome_2 = usuarios[no2.id_externo].get_nome();
-	std::cout << "S " << nome_1 << " " << nome_2 << "\n";
+	nova_linha();
+	std::cout << "S " << nome_1 << " " << nome_2;
 };
 
 void Sistema::remover_seguimento_usuario(int id1, int id2) {
@@ -103,7 +114,8 @@ void Sistema::remover_seguimento_usuario(int id1, int id2) {
 
 	std::string nome_1 = usuarios[no_usuario1.id_externo].get_nome();
 	std::string nome_2 = usuarios[no_usuario2.id_externo].get_nome();
-	std::cout << "R " << nome_1 << " " << nome_2 << "\n";
+	nova_linha();
+	std::cout << "R " << nome_1 << " " << nome_2;
 };
 
 void Sistema::consultar_temas(int id_usuario) const {
@@ -112,11 +124,11 @@ void Sistema::consultar_temas(int id_usuario) const {
 	int id_interno = no_usuario.id_grafo;
 	Lista<No *> temas = grafo_temas.obter_vizinhos_apontados_por(id_interno);
 	ordenar_vizinhos(temas);
+	nova_linha();
 	std::cout << "LT " << usuario.get_nome();
 	for (int i = 0; i < temas.get_tamanho(); i++) {
 		std::cout << " " << dicionario.get_tema(temas[i]->id_externo).get_nome();
 	}
-	std::cout << std::endl;
 };
 
 void Sistema::consultar_seguidores(int id_usuario) const {
@@ -126,11 +138,11 @@ void Sistema::consultar_seguidores(int id_usuario) const {
 	Lista<No *> seguidores = grafo_social.obter_vizinhos_que_apontam_para(id_interno);
 	ordenar_vizinhos(seguidores);
 
+	nova_linha();
 	std::cout << "LC " << usuario.get_nome();
 	for (int i = 0; i < seguidores.get_tamanho(); i++) {
 		std::cout << " " << dicionario.get_usuario(seguidores[i]->id_externo).get_nome();
 	}
-	std::cout << std::endl;
 };
 void Sistema::consultar_seguidos(int id_usuario) const {
 	const No &no_usuario = dicionario.get_no_usuario_grafo_social(id_usuario);
@@ -139,11 +151,11 @@ void Sistema::consultar_seguidos(int id_usuario) const {
 	Lista<No *> seguidos = grafo_social.obter_vizinhos_apontados_por(id_interno);
 	ordenar_vizinhos(seguidos);
 
+	nova_linha();
 	std::cout << "LS " << usuario.get_nome();
 	for (int i = 0; i < seguidos.get_tamanho(); i++) {
 		std::cout << " " << dicionario.get_usuario(seguidos[i]->id_externo).get_nome();
 	}
-	std::cout << std::endl;
 };
 void Sistema::consultar_amigos(int id_usuario) const {
 	const No &no_usuario = dicionario.get_no_usuario_grafo_social(id_usuario);
@@ -152,11 +164,11 @@ void Sistema::consultar_amigos(int id_usuario) const {
 	Lista<No *> amigos = grafo_social.obter_vizinhos_bidirecional(id_interno);
 	ordenar_vizinhos(amigos);
 
+	nova_linha();
 	std::cout << "LA " << usuario.get_nome();
 	for (int i = 0; i < amigos.get_tamanho(); i++) {
 		std::cout << " " << dicionario.get_usuario(amigos[i]->id_externo).get_nome();
 	}
-	std::cout << std::endl;
 };
 void Sistema::consultar_relacao(int id1, int id2) const {
 	const No &no_usuario1 = dicionario.get_no_usuario_grafo_social(id1);
@@ -177,7 +189,8 @@ void Sistema::consultar_relacao(int id1, int id2) const {
 	}
 	std::string nome_1 = usuarios[no_usuario1.id_externo].get_nome();
 	std::string nome_2 = usuarios[no_usuario2.id_externo].get_nome();
-	std::cout << "Q " << nome_1 << " " << nome_2 << " " << caso << "\n";
+	nova_linha();
+	std::cout << "Q " << nome_1 << " " << nome_2 << " " << caso;
 };
 void Sistema::consultar_interesse(int id_usuario, int id_tema) const {
 	const No &no_usuario = dicionario.get_no_usuario_grafo_temas(id_usuario);
@@ -190,7 +203,8 @@ void Sistema::consultar_interesse(int id_usuario, int id_tema) const {
 
 	std::string nome_usuario = usuarios[no_usuario.id_externo].get_nome();
 	std::string nome_tema = temas[no_tema.id_externo].get_nome();
-	std::cout << "G " << nome_usuario << " " << nome_tema << " " << valor << "\n";
+	nova_linha();
+	std::cout << "G " << nome_usuario << " " << nome_tema << " " << valor;
 };
 
 void Sistema::consultar_popularidade(int id_tema) const {
@@ -200,9 +214,15 @@ void Sistema::consultar_popularidade(int id_tema) const {
 	int quant_interessados = interessados.get_tamanho();
 
 	std::string nome_tema = temas[no_tema.id_externo].get_nome();
-	std::cout << "F " << nome_tema << " " << quant_interessados << "\n";
+	nova_linha();
+	std::cout << "F " << nome_tema << " " << quant_interessados;
 };
 
+/**
+ * Implementa BFS iterativo usando Lista<int> como fila FIFO com ponteiro 'frente',
+ * evitando STL. A distância de nós não alcançáveis permanece -1. Indexado por
+ * id_grafo (índice interno), portanto tem exatamente num_usuarios entradas.
+ */
 Lista<int> Sistema::bfs_distancias_social(int id_interno_social) const {
 	Lista<int> dist;
 	for (int i = 0; i < num_usuarios; i++) {
@@ -229,7 +249,12 @@ Lista<int> Sistema::bfs_distancias_social(int id_interno_social) const {
 	return dist;
 }
 
-float Sistema::calcular_jaccard(int id_temas_u, int id_temas_v) const {
+/**
+ * Calcula |A ∩ B| / |A ∪ B| via laço duplo O(|u|×|v|). Usa a identidade
+ * |A ∪ B| = |A| + |B| − |A ∩ B| para evitar uma terceira iteração.
+ * Retorna 0 quando ambos os conjuntos são vazios (evita divisão por zero).
+ */
+double Sistema::calcular_jaccard(int id_temas_u, int id_temas_v) const {
 	Lista<No *> temas_u = grafo_temas.obter_vizinhos_apontados_por(id_temas_u);
 	Lista<No *> temas_v = grafo_temas.obter_vizinhos_apontados_por(id_temas_v);
 
@@ -237,7 +262,7 @@ float Sistema::calcular_jaccard(int id_temas_u, int id_temas_v) const {
 	int tam_v = temas_v.get_tamanho();
 
 	if (tam_u == 0 && tam_v == 0)
-		return 0.0f;
+		return 0.0;
 
 	int intersecao = 0;
 	for (int i = 0; i < tam_u; i++) {
@@ -251,25 +276,33 @@ float Sistema::calcular_jaccard(int id_temas_u, int id_temas_v) const {
 
 	int uniao = tam_u + tam_v - intersecao;
 	if (uniao == 0)
-		return 0.0f;
-	return (float)intersecao / (float)uniao;
+		return 0.0;
+	return (double)intersecao / (double)uniao;
 }
 
 struct Candidato {
 	int id_externo;
-	float score;
+	double score;
 };
 
+static const double EPS = 1e-9;
+
+/**
+ * Ordena candidatos em ordem decrescente de score, desempatando por id_externo
+ * crescente. Usa insertion sort para simplicidade e comparação com epsilon (EPS)
+ * para tratar igualdades em ponto flutuante de forma robusta.
+ */
 static void insertion_sort_candidatos(Lista<Candidato> &cands) {
 	for (int i = 1; i < cands.get_tamanho(); i++) {
 		Candidato chave = cands[i];
 		int j = i - 1;
 		while (j >= 0) {
 			bool deve_mover;
-			if (cands[j].score > chave.score)
-				deve_mover = false;
-			else if (cands[j].score < chave.score)
+			double diff = cands[j].score - chave.score;
+			if (diff < -EPS)
 				deve_mover = true;
+			else if (diff > EPS)
+				deve_mover = false;
 			else
 				deve_mover = cands[j].id_externo > chave.id_externo;
 			if (!deve_mover)
@@ -281,7 +314,7 @@ static void insertion_sort_candidatos(Lista<Candidato> &cands) {
 	}
 }
 
-void Sistema::consultar_recomendacao(int id_usuario, int topk, float peso_prox, float peso_afin) const {
+void Sistema::consultar_recomendacao(int id_usuario, int topk, double peso_prox, double peso_afin) const {
 	const No &no_social_u = dicionario.get_no_usuario_grafo_social(id_usuario);
 	const No &no_temas_u = dicionario.get_no_usuario_grafo_temas(id_usuario);
 	int id_s_u = no_social_u.id_grafo;
@@ -298,13 +331,13 @@ void Sistema::consultar_recomendacao(int id_usuario, int topk, float peso_prox, 
 		if (grafo_social.checar_aresta(id_s_u, id_s_v))
 			continue;
 
-		float p = 0.0f;
+		double p = 0.0;
 		if (dist[id_s_v] > 0)
-			p = 2.0f / (float)dist[id_s_v];
+			p = 2.0 / (double)dist[id_s_v];
 
 		const No &no_temas_v = dicionario.get_no_usuario_grafo_temas(id_ext_v);
 		int id_t_v = no_temas_v.id_grafo;
-		float a = calcular_jaccard(id_t_u, id_t_v);
+		double a = calcular_jaccard(id_t_u, id_t_v);
 
 		Candidato c;
 		c.id_externo = id_ext_v;
@@ -315,9 +348,9 @@ void Sistema::consultar_recomendacao(int id_usuario, int topk, float peso_prox, 
 	insertion_sort_candidatos(candidatos);
 
 	int qtd_saida = (topk < candidatos.get_tamanho()) ? topk : candidatos.get_tamanho();
+	nova_linha();
 	std::cout << "P " << usuarios[id_usuario].get_nome();
 	for (int i = 0; i < qtd_saida; i++) {
 		std::cout << " " << usuarios[candidatos[i].id_externo].get_nome();
 	}
-	std::cout << "\n";
 }

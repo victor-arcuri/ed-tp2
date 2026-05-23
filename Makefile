@@ -33,7 +33,9 @@ directories:
 	@mkdir -p obj bin
 
 clean:
-	rm -f obj/*.o bin/tp2.out ZIP
-
+	rm -f obj/*.o bin/tp2.out $(ZIP)
+	
 zip:
-	zip -r $(ZIP) Makefile src/ include/ bin/ obj/ -x "bin/*" -x "obj/*" -x "*/.git*"
+	mkdir -p bin obj
+	zip -r $(ZIP) Makefile src/ include/ -x "*/.git*"
+	zip $(ZIP) bin/ obj/
