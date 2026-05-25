@@ -112,5 +112,6 @@ int main() {
 			sistema.consultar_recomendacao(id_usuario, topk, peso_prox, peso_afin);
 		}
 	}
+	sistema.imprimir_relatorio(std::cerr);
 	return 0;
 }

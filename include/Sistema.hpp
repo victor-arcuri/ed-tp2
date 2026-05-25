@@ -4,8 +4,10 @@
 #include "Dicionario.hpp"
 #include "Grafo.hpp"
 #include "Lista.hpp"
+#include "Medicoes.hpp"
 #include "Tema.hpp"
 #include "Usuario.hpp"
+#include <ostream>
 
 /**
  * Classe Sistema
@@ -24,6 +26,7 @@ class Sistema {
 	int num_usuarios;
 	int num_temas;
 	mutable bool primeiro_output;
+	mutable MedicoesOp medicoes[NUM_OP_SISTEMA];
 
 	/**
 	 * Função nova_linha
@@ -224,6 +227,19 @@ class Sistema {
 	 * peso_afin: peso da métrica de afinidade de temas.
 	 */
 	void consultar_recomendacao(int id_usuario, int topk, double peso_prox, double peso_afin) const;
+
+	/**
+	 * Função imprimir_relatorio
+	 * ---------------------------------------------------
+	 * Imprime para o fluxo de saída informado as estatísticas de tempo
+	 * coletadas durante a execução: por operação do Sistema e por operação
+	 * de cada Grafo (social e de temas). Deve ser chamada após o encerramento
+	 * do loop de comandos, tipicamente com std::cerr para não interferir
+	 * na saída padrão esperada pelo VPL.
+	 *
+	 * out: fluxo de saída onde o relatório será escrito (ex: std::cerr).
+	 */
+	void imprimir_relatorio(std::ostream &out) const;
 };
 
 #endif

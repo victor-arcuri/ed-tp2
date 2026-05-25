@@ -1,0 +1,1404 @@
+=== E_atualizacoes_grande_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		1103909		1103.91
+adicionar_tema           50		38295		765.9
+seguir_usuario           12196		4671199		383.011
+remover_seguimento       1536		69512952		45255.8
+consultar_temas          162		4491858		27727.5
+consultar_seguidores     185		12910200		69784.9
+consultar_seguidos       182		12930860		71048.7
+consultar_amigos         179		135671952		757944
+consultar_relacao        187		25000241		133691
+consultar_interesse      180		4670605		25947.8
+consultar_popularidade   193		5824014		30176.2
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		32229		32.229
+criar_aresta             12196		434762		35.6479
+remover_aresta           1536		68592978		44656.9
+vizinhos_apontados_por   182		12477644		68558.5
+vizinhos_apontam_para    185		12478161		67449.5
+vizinhos_bidirecional    179		135574434		757399
+checar_aresta            374		24850055		66444
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		58455		55.6714
+criar_aresta             4000		124273		31.0682
+remover_aresta           0		0		0
+vizinhos_apontados_por   162		4322987		26685.1
+vizinhos_apontam_para    193		5728311		29680.4
+vizinhos_bidirecional    0		0		0
+checar_aresta            180		4526633		25148
+trocar_tipo              0		0		0
+
+=== E_atualizacoes_grande_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		1109123		1109.12
+adicionar_tema           50		36042		720.84
+seguir_usuario           4252		1577243		370.941
+remover_seguimento       1541		15829412		10272.2
+consultar_temas          186		5017651		26976.6
+consultar_seguidores     160		2530902		15818.1
+consultar_seguidos       147		2318591		15772.7
+consultar_amigos         183		10498323		57367.9
+consultar_relacao        187		5841944		31240.3
+consultar_interesse      171		4292678		25103.4
+consultar_popularidade   173		5107420		29522.7
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		32429		32.429
+criar_aresta             4252		158167		37.1983
+remover_aresta           1541		15162704		9839.52
+vizinhos_apontados_por   147		2239807		15236.8
+vizinhos_apontam_para    160		2446135		15288.3
+vizinhos_bidirecional    183		10441745		57058.7
+checar_aresta            374		5724597		15306.4
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		57549		54.8086
+criar_aresta             4000		125062		31.2655
+remover_aresta           0		0		0
+vizinhos_apontados_por   186		4871450		26190.6
+vizinhos_apontam_para    173		5036699		29113.9
+vizinhos_bidirecional    0		0		0
+checar_aresta            171		4192644		24518.4
+trocar_tipo              0		0		0
+
+=== E_atualizacoes_medio_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        300		340290		1134.3
+adicionar_tema           30		19200		640
+seguir_usuario           3873		1386544		358.003
+remover_seguimento       612		8387816		13705.6
+consultar_temas          69		461450		6687.68
+consultar_seguidores     72		1606823		22317
+consultar_seguidos       65		1471926		22645
+consultar_amigos         82		19310034		235488
+consultar_relacao        81		3245726		40070.7
+consultar_interesse      64		398185		6221.64
+consultar_popularidade   82		618276		7539.95
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 300		10792		35.9733
+criar_aresta             3873		132938		34.3243
+remover_aresta           612		8128992		13282.7
+vizinhos_apontados_por   65		1361016		20938.7
+vizinhos_apontam_para    72		1477568		20521.8
+vizinhos_bidirecional    82		19283538		235165
+checar_aresta            162		3196581		19732
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 330		17455		52.8939
+criar_aresta             900		29066		32.2956
+remover_aresta           0		0		0
+vizinhos_apontados_por   69		421126		6103.28
+vizinhos_apontam_para    82		589698		7191.44
+vizinhos_bidirecional    0		0		0
+checar_aresta            64		365928		5717.62
+trocar_tipo              0		0		0
+
+=== E_atualizacoes_medio_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        300		355530		1185.1
+adicionar_tema           30		20370		679
+seguir_usuario           1489		523425		351.528
+remover_seguimento       623		2157430		3462.97
+consultar_temas          57		376970		6613.51
+consultar_seguidores     68		357869		5262.78
+consultar_seguidos       83		433804		5226.55
+consultar_amigos         69		1157408		16774
+consultar_relacao        67		658271		9824.94
+consultar_interesse      82		503266		6137.39
+consultar_popularidade   62		465975		7515.73
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 300		10996		36.6533
+criar_aresta             1489		49520		33.2572
+remover_aresta           623		1917904		3078.5
+vizinhos_apontados_por   83		391358		4715.16
+vizinhos_apontam_para    68		323817		4762.01
+vizinhos_bidirecional    69		1139211		16510.3
+checar_aresta            134		621266		4636.31
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 330		17822		54.0061
+criar_aresta             900		29909		33.2322
+remover_aresta           0		0		0
+vizinhos_apontados_por   57		341874		5997.79
+vizinhos_apontam_para    62		444298		7166.1
+vizinhos_bidirecional    0		0		0
+checar_aresta            82		462199		5636.57
+trocar_tipo              0		0		0
+
+=== E_atualizacoes_pequeno_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        50		49300		986
+adicionar_tema           10		10517		1051.7
+seguir_usuario           727		246681		339.314
+remover_seguimento       144		405688		2817.28
+consultar_temas          15		18172		1211.47
+consultar_seguidores     26		150764		5798.62
+consultar_seguidos       23		137189		5964.74
+consultar_amigos         16		589570		36848.1
+consultar_relacao        16		112975		7060.94
+consultar_interesse      23		25146		1093.3
+consultar_popularidade   10		15625		1562.5
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 50		2983		59.66
+criar_aresta             727		25849		35.5557
+remover_aresta           144		352327		2446.72
+vizinhos_apontados_por   23		94944		4128
+vizinhos_apontam_para    26		105316		4050.62
+vizinhos_bidirecional    16		579572		36223.2
+checar_aresta            32		104422		3263.19
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 60		4560		76
+criar_aresta             100		4683		46.83
+remover_aresta           0		0		0
+vizinhos_apontados_por   15		12131		808.733
+vizinhos_apontam_para    10		12251		1225.1
+vizinhos_bidirecional    0		0		0
+checar_aresta            23		15475		672.826
+trocar_tipo              0		0		0
+
+=== E_atualizacoes_pequeno_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        50		48957		979.14
+adicionar_tema           10		9291		929.1
+seguir_usuario           326		119672		367.092
+remover_seguimento       144		158323		1099.47
+consultar_temas          18		22953		1275.17
+consultar_seguidores     22		35085		1594.77
+consultar_seguidos       17		32752		1926.59
+consultar_amigos         22		79224		3601.09
+consultar_relacao        17		43381		2551.82
+consultar_interesse      16		20669		1291.81
+consultar_popularidade   18		29472		1637.33
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 50		2990		59.8
+criar_aresta             326		12877		39.5
+remover_aresta           144		106258		737.903
+vizinhos_apontados_por   17		21338		1255.18
+vizinhos_apontam_para    22		23818		1082.64
+vizinhos_bidirecional    22		72951		3315.95
+checar_aresta            34		33932		998
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 60		4237		70.6167
+criar_aresta             100		4286		42.86
+remover_aresta           0		0		0
+vizinhos_apontados_por   18		14943		830.167
+vizinhos_apontam_para    18		23180		1287.78
+vizinhos_bidirecional    0		0		0
+checar_aresta            16		12088		755.5
+trocar_tipo              0		0		0
+
+=== E_consultas_grande_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		1170124		1170.12
+adicionar_tema           50		32603		652.06
+seguir_usuario           10604		3844057		362.51
+remover_seguimento       383		16796874		43856.1
+consultar_temas          603		16584036		27502.5
+consultar_seguidores     560		38486944		68726.7
+consultar_seguidos       578		40089299		69358.6
+consultar_amigos         594		431599134		726598
+consultar_relacao        558		73340794		131435
+consultar_interesse      539		13874711		25741.6
+consultar_popularidade   581		17489567		30102.5
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		34159		34.159
+criar_aresta             10604		371702		35.053
+remover_aresta           383		16519240		43131.2
+vizinhos_apontados_por   578		38711807		66975.4
+vizinhos_apontam_para    560		37166489		66368.7
+vizinhos_bidirecional    594		431260996		726029
+checar_aresta            1116		72831793		65261.5
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		62138		59.179
+criar_aresta             4000		127898		31.9745
+remover_aresta           0		0		0
+vizinhos_apontados_por   603		16013270		26556
+vizinhos_apontam_para    581		17212340		29625.4
+vizinhos_bidirecional    0		0		0
+checar_aresta            539		13460575		24973.2
+trocar_tipo              0		0		0
+
+=== E_consultas_grande_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		1103051		1103.05
+adicionar_tema           50		34177		683.54
+seguir_usuario           2592		1010136		389.713
+remover_seguimento       407		3870469		9509.75
+consultar_temas          531		14365279		27053.3
+consultar_seguidores     583		8391631		14393.9
+consultar_seguidos       579		8311101		14354.2
+consultar_amigos         544		23158339		42570.5
+consultar_relacao        567		15825580		27911.1
+consultar_interesse      586		14821657		25292.9
+consultar_popularidade   611		18071640		29577.2
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		32508		32.508
+criar_aresta             2592		107507		41.4765
+remover_aresta           407		3653686		8977.12
+vizinhos_apontados_por   579		7957323		13743.2
+vizinhos_apontam_para    583		8040402		13791.4
+vizinhos_bidirecional    544		22968476		42221.5
+checar_aresta            1134		15434729		13610.9
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		57018		54.3029
+criar_aresta             4000		125104		31.276
+remover_aresta           0		0		0
+vizinhos_apontados_por   531		13925479		26225
+vizinhos_apontam_para    611		17817484		29161.2
+vizinhos_bidirecional    0		0		0
+checar_aresta            586		14472393		24696.9
+trocar_tipo              0		0		0
+
+=== E_consultas_medio_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        300		352390		1174.63
+adicionar_tema           30		19550		651.667
+seguir_usuario           3283		1144036		348.473
+remover_seguimento       158		2083360		13185.8
+consultar_temas          217		1430155		6590.58
+consultar_seguidores     227		4961466		21856.7
+consultar_seguidos       247		5487585		22216.9
+consultar_amigos         204		45903299		225016
+consultar_relacao        216		8498519		39345
+consultar_interesse      210		1321966		6295.08
+consultar_popularidade   238		1802297		7572.68
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 300		10643		35.4767
+criar_aresta             3283		111235		33.8821
+remover_aresta           158		2008543		12712.3
+vizinhos_apontados_por   247		5068418		20519.9
+vizinhos_apontam_para    227		4585693		20201.3
+vizinhos_bidirecional    204		45824275		224629
+checar_aresta            432		8368463		19371.4
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 330		26973		81.7364
+criar_aresta             900		30554		33.9489
+remover_aresta           0		0		0
+vizinhos_apontados_por   217		1300182		5991.62
+vizinhos_apontam_para    238		1716739		7213.19
+vizinhos_bidirecional    0		0		0
+checar_aresta            210		1197706		5703.36
+trocar_tipo              0		0		0
+
+=== E_consultas_medio_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        300		347113		1157.04
+adicionar_tema           30		20209		673.633
+seguir_usuario           830		293463		353.57
+remover_seguimento       152		471677		3103.14
+consultar_temas          207		1348851		6516.19
+consultar_seguidores     246		1165521		4737.89
+consultar_seguidos       234		1123893		4802.96
+consultar_amigos         228		3105425		13620.3
+consultar_relacao        225		2000807		8892.48
+consultar_interesse      251		1504162		5992.68
+consultar_popularidade   227		1710553		7535.48
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 300		10840		36.1333
+criar_aresta             830		27854		33.559
+remover_aresta           152		410752		2702.32
+vizinhos_apontados_por   234		1004488		4292.68
+vizinhos_apontam_para    246		1046785		4255.22
+vizinhos_bidirecional    228		3047351		13365.6
+checar_aresta            450		1880687		4179.3
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 330		17738		53.7515
+criar_aresta             900		29366		32.6289
+remover_aresta           0		0		0
+vizinhos_apontados_por   207		1234822		5965.32
+vizinhos_apontam_para    227		1632406		7191.22
+vizinhos_bidirecional    0		0		0
+checar_aresta            251		1383744		5512.92
+trocar_tipo              0		0		0
+
+=== E_consultas_pequeno_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        50		49278		985.56
+adicionar_tema           10		9158		915.8
+seguir_usuario           572		198630		347.255
+remover_seguimento       31		93255		3008.23
+consultar_temas          61		73630		1207.05
+consultar_seguidores     49		284326		5802.57
+consultar_seguidos       60		348028		5800.47
+consultar_amigos         65		2467446		37960.7
+consultar_relacao        55		359379		6534.16
+consultar_interesse      55		59244		1077.16
+consultar_popularidade   52		87378		1680.35
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 50		3063		61.26
+criar_aresta             572		23539		41.1521
+remover_aresta           31		79998		2580.58
+vizinhos_apontados_por   60		245625		4093.75
+vizinhos_apontam_para    49		195980		3999.59
+vizinhos_bidirecional    65		2435079		37462.8
+checar_aresta            110		329893		2999.03
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 60		4277		71.2833
+criar_aresta             100		4525		45.25
+remover_aresta           0		0		0
+vizinhos_apontados_por   61		50277		824.213
+vizinhos_apontam_para    52		68981		1326.56
+vizinhos_bidirecional    0		0		0
+checar_aresta            55		35682		648.764
+trocar_tipo              0		0		0
+
+=== E_consultas_pequeno_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        50		49756		995.12
+adicionar_tema           10		12821		1282.1
+seguir_usuario           154		54093		351.253
+remover_seguimento       41		39739		969.244
+consultar_temas          63		73024		1159.11
+consultar_seguidores     65		77021		1184.94
+consultar_seguidos       47		60612		1289.62
+consultar_amigos         60		157133		2618.88
+consultar_relacao        60		115359		1922.65
+consultar_interesse      53		56057		1057.68
+consultar_popularidade   57		90216		1582.74
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 50		3108		62.16
+criar_aresta             154		4689		30.4481
+remover_aresta           41		25675		626.22
+vizinhos_apontados_por   47		40591		863.638
+vizinhos_apontam_para    65		54031		831.246
+vizinhos_bidirecional    60		142481		2374.68
+checar_aresta            120		85848		715.4
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 60		4215		70.25
+criar_aresta             100		4539		45.39
+remover_aresta           0		0		0
+vizinhos_apontados_por   63		49690		788.73
+vizinhos_apontam_para    57		70871		1243.35
+vizinhos_bidirecional    0		0		0
+checar_aresta            53		33311		628.509
+trocar_tipo              0		0		0
+
+=== L_atualizacoes_grande_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		1586728		1586.73
+adicionar_tema           50		43066		861.32
+seguir_usuario           12196		5199485		426.327
+remover_seguimento       1536		751981		489.571
+consultar_temas          162		159231		982.907
+consultar_seguidores     185		17460907		94383.3
+consultar_seguidos       182		419765		2306.4
+consultar_amigos         179		274020		1530.84
+consultar_relacao        187		162701		870.059
+consultar_interesse      180		129797		721.094
+consultar_popularidade   193		7840501		40624.4
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		154830		154.83
+criar_aresta             12196		967934		79.3649
+remover_aresta           1536		172277		112.16
+vizinhos_apontados_por   182		22941		126.049
+vizinhos_apontam_para    185		16863673		91155
+vizinhos_bidirecional    179		224510		1254.25
+checar_aresta            374		50135		134.051
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		339157		323.007
+criar_aresta             4000		210458		52.6145
+remover_aresta           0		0		0
+vizinhos_apontados_por   162		17396		107.383
+vizinhos_apontam_para    193		7736620		40086.1
+vizinhos_bidirecional    0		0		0
+checar_aresta            180		16401		91.1167
+trocar_tipo              0		0		0
+
+=== L_atualizacoes_grande_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		1668695		1668.69
+adicionar_tema           50		42234		844.68
+seguir_usuario           4252		1767515		415.69
+remover_seguimento       1541		699564		453.968
+consultar_temas          186		154470		830.484
+consultar_seguidores     160		5963481		37271.8
+consultar_seguidos       147		106538		724.748
+consultar_amigos         183		81930		447.705
+consultar_relacao        187		120836		646.182
+consultar_interesse      171		97302		569.018
+consultar_popularidade   173		6774700		39160.1
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		158509		158.509
+criar_aresta             4252		284633		66.941
+remover_aresta           1541		140643		91.2674
+vizinhos_apontados_por   147		13236		90.0408
+vizinhos_apontam_para    160		5859438		36621.5
+vizinhos_bidirecional    183		38738		211.683
+checar_aresta            374		25766		68.893
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		351555		334.814
+criar_aresta             4000		215313		53.8282
+remover_aresta           0		0		0
+vizinhos_apontados_por   186		17016		91.4839
+vizinhos_apontam_para    173		6695207		38700.6
+vizinhos_bidirecional    0		0		0
+checar_aresta            171		13240		77.4269
+trocar_tipo              0		0		0
+
+=== L_atualizacoes_medio_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        300		489631		1632.1
+adicionar_tema           30		25028		834.267
+seguir_usuario           3873		1535828		396.547
+remover_seguimento       612		267911		437.763
+consultar_temas          69		44104		639.188
+consultar_seguidores     72		2124947		29513.2
+consultar_seguidos       65		115895		1783
+consultar_amigos         82		114976		1402.15
+consultar_relacao        81		55892		690.025
+consultar_interesse      64		33974		530.844
+consultar_popularidade   82		862460		10517.8
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 300		62727		209.09
+criar_aresta             3873		268550		69.339
+remover_aresta           612		64096		104.732
+vizinhos_apontados_por   65		7178		110.431
+vizinhos_apontam_para    72		1914624		26592
+vizinhos_bidirecional    82		95114		1159.93
+checar_aresta            162		18770		115.864
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 330		96536		292.533
+criar_aresta             900		50208		55.7867
+remover_aresta           0		0		0
+vizinhos_apontados_por   69		5980		86.6667
+vizinhos_apontam_para    82		829956		10121.4
+vizinhos_bidirecional    0		0		0
+checar_aresta            64		4165		65.0781
+trocar_tipo              0		0		0
+
+=== L_atualizacoes_medio_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        300		493279		1644.26
+adicionar_tema           30		24308		810.267
+seguir_usuario           1489		572152		384.253
+remover_seguimento       623		257294		412.992
+consultar_temas          57		36870		646.842
+consultar_seguidores     68		763086		11221.9
+consultar_seguidos       83		54015		650.783
+consultar_amigos         69		27125		393.116
+consultar_relacao        67		38786		578.896
+consultar_interesse      82		49209		600.11
+consultar_popularidade   62		657079		10598
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 300		63162		210.54
+criar_aresta             1489		93227		62.6105
+remover_aresta           623		50400		80.8989
+vizinhos_apontados_por   83		7744		93.3012
+vizinhos_apontam_para    68		723968		10646.6
+vizinhos_bidirecional    69		13455		195
+checar_aresta            134		8161		60.903
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 330		91295		276.652
+criar_aresta             900		50829		56.4767
+remover_aresta           0		0		0
+vizinhos_apontados_por   57		4768		83.6491
+vizinhos_apontam_para    62		634136		10228
+vizinhos_bidirecional    0		0		0
+checar_aresta            82		5119		62.4268
+trocar_tipo              0		0		0
+
+=== L_atualizacoes_pequeno_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        50		63525		1270.5
+adicionar_tema           10		12981		1298.1
+seguir_usuario           727		270247		371.729
+remover_seguimento       144		59194		411.069
+consultar_temas          15		6904		460.267
+consultar_seguidores     26		192130		7389.62
+consultar_seguidos       23		44436		1932
+consultar_amigos         16		26002		1625.12
+consultar_relacao        16		10803		675.188
+consultar_interesse      23		10683		464.478
+consultar_popularidade   10		20662		2066.2
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 50		9274		185.48
+criar_aresta             727		47481		65.3109
+remover_aresta           144		14442		100.292
+vizinhos_apontados_por   23		2558		111.217
+vizinhos_apontam_para    26		114981		4422.35
+vizinhos_bidirecional    16		17143		1071.44
+checar_aresta            32		3591		112.219
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 60		12995		216.583
+criar_aresta             100		4334		43.34
+remover_aresta           0		0		0
+vizinhos_apontados_por   15		1126		75.0667
+vizinhos_apontam_para    10		16992		1699.2
+vizinhos_bidirecional    0		0		0
+checar_aresta            23		1230		53.4783
+trocar_tipo              0		0		0
+
+=== L_atualizacoes_pequeno_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        50		63901		1278.02
+adicionar_tema           10		13097		1309.7
+seguir_usuario           326		119434		366.362
+remover_seguimento       144		55668		386.583
+consultar_temas          18		8116		450.889
+consultar_seguidores     22		52691		2395.05
+consultar_seguidos       17		10534		619.647
+consultar_amigos         22		7652		347.818
+consultar_relacao        17		9644		567.294
+consultar_interesse      16		8058		503.625
+consultar_popularidade   18		36569		2031.61
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 50		9345		186.9
+criar_aresta             326		19065		58.4816
+remover_aresta           144		11264		78.2222
+vizinhos_apontados_por   17		1542		90.7059
+vizinhos_apontam_para    22		41658		1893.55
+vizinhos_bidirecional    22		3615		164.318
+checar_aresta            34		1971		57.9706
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 60		13172		219.533
+criar_aresta             100		4206		42.06
+remover_aresta           0		0		0
+vizinhos_apontados_por   18		1239		68.8333
+vizinhos_apontam_para    18		30499		1694.39
+vizinhos_bidirecional    0		0		0
+checar_aresta            16		916		57.25
+trocar_tipo              0		0		0
+
+=== L_consultas_grande_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		1602910		1602.91
+adicionar_tema           50		41188		823.76
+seguir_usuario           10604		4367027		411.828
+remover_seguimento       383		240326		627.483
+consultar_temas          603		526699		873.464
+consultar_seguidores     560		51768584		92443.9
+consultar_seguidos       578		1192445		2063.05
+consultar_amigos         594		878015		1478.14
+consultar_relacao        558		457557		819.995
+consultar_interesse      539		351654		652.419
+consultar_popularidade   581		22870017		39363.2
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		155952		155.952
+criar_aresta             10604		790211		74.5201
+remover_aresta           383		48790		127.389
+vizinhos_apontados_por   578		69606		120.426
+vizinhos_apontam_para    560		50078221		89425.4
+vizinhos_bidirecional    594		713204		1200.68
+checar_aresta            1116		138171		123.809
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		336383		320.365
+criar_aresta             4000		211715		52.9288
+remover_aresta           0		0		0
+vizinhos_apontados_por   603		52477		87.0265
+vizinhos_apontam_para    581		22561894		38832.9
+vizinhos_bidirecional    0		0		0
+checar_aresta            539		41366		76.7458
+trocar_tipo              0		0		0
+
+=== L_consultas_grande_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		1630806		1630.81
+adicionar_tema           50		42272		845.44
+seguir_usuario           2592		1148598		443.132
+remover_seguimento       407		216871		532.853
+consultar_temas          531		450848		849.055
+consultar_seguidores     583		20722819		35545.1
+consultar_seguidos       579		346797		598.959
+consultar_amigos         544		218006		400.746
+consultar_relacao        567		394105		695.071
+consultar_interesse      586		347022		592.188
+consultar_popularidade   611		24750650		40508.4
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		161154		161.154
+criar_aresta             2592		177319		68.4101
+remover_aresta           407		37874		93.0565
+vizinhos_apontados_por   579		47054		81.2677
+vizinhos_apontam_para    583		20323208		34859.7
+vizinhos_bidirecional    544		94349		173.436
+checar_aresta            1134		70444		62.1199
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		355222		338.307
+criar_aresta             4000		212315		53.0787
+remover_aresta           0		0		0
+vizinhos_apontados_por   531		46260		87.1186
+vizinhos_apontam_para    611		24426984		39978.7
+vizinhos_bidirecional    0		0		0
+checar_aresta            586		43729		74.6229
+trocar_tipo              0		0		0
+
+=== L_consultas_medio_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        300		489791		1632.64
+adicionar_tema           30		22914		763.8
+seguir_usuario           3283		1282214		390.562
+remover_seguimento       158		76989		487.272
+consultar_temas          217		125522		578.442
+consultar_seguidores     227		6498881		28629.4
+consultar_seguidos       247		413926		1675.81
+consultar_amigos         204		264733		1297.71
+consultar_relacao        216		146075		676.273
+consultar_interesse      210		98576		469.41
+consultar_popularidade   238		2475141		10399.8
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 300		66513		221.71
+criar_aresta             3283		218186		66.4593
+remover_aresta           158		21346		135.101
+vizinhos_apontados_por   247		26255		106.296
+vizinhos_apontam_para    227		5939372		26164.6
+vizinhos_bidirecional    204		214146		1049.74
+checar_aresta            432		46958		108.699
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 330		89175		270.227
+criar_aresta             900		50144		55.7156
+remover_aresta           0		0		0
+vizinhos_apontados_por   217		15341		70.6959
+vizinhos_apontam_para    238		2384271		10017.9
+vizinhos_bidirecional    0		0		0
+checar_aresta            210		11729		55.8524
+trocar_tipo              0		0		0
+
+=== L_consultas_medio_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        300		484484		1614.95
+adicionar_tema           30		23806		793.533
+seguir_usuario           830		324151		390.543
+remover_seguimento       152		66203		435.546
+consultar_temas          207		118411		572.034
+consultar_seguidores     246		2571513		10453.3
+consultar_seguidos       234		115346		492.932
+consultar_amigos         228		74098		324.991
+consultar_relacao        225		127180		565.244
+consultar_interesse      251		118117		470.586
+consultar_popularidade   227		2345760		10333.7
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 300		66041		220.137
+criar_aresta             830		49113		59.1723
+remover_aresta           152		12137		79.8487
+vizinhos_apontados_por   234		20992		89.7094
+vizinhos_apontam_para    246		2433339		9891.62
+vizinhos_bidirecional    228		34250		150.219
+checar_aresta            450		24237		53.86
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 330		89103		270.009
+criar_aresta             900		50178		55.7533
+remover_aresta           0		0		0
+vizinhos_apontados_por   207		15490		74.8309
+vizinhos_apontam_para    227		2261938		9964.48
+vizinhos_bidirecional    0		0		0
+checar_aresta            251		13557		54.012
+trocar_tipo              0		0		0
+
+=== L_consultas_pequeno_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        50		62241		1244.82
+adicionar_tema           10		12122		1212.2
+seguir_usuario           572		213479		373.215
+remover_seguimento       31		13749		443.516
+consultar_temas          61		25649		420.475
+consultar_seguidores     49		347180		7085.31
+consultar_seguidos       60		103365		1722.75
+consultar_amigos         65		96545		1485.31
+consultar_relacao        55		35649		648.164
+consultar_interesse      55		24763		450.236
+consultar_popularidade   52		101189		1945.94
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 50		9278		185.56
+criar_aresta             572		35930		62.8147
+remover_aresta           31		3187		102.806
+vizinhos_apontados_por   60		6117		101.95
+vizinhos_apontam_para    49		211501		4316.35
+vizinhos_bidirecional    65		69606		1070.86
+checar_aresta            110		10499		95.4455
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 60		12632		210.533
+criar_aresta             100		4255		42.55
+remover_aresta           0		0		0
+vizinhos_apontados_por   61		3839		62.9344
+vizinhos_apontam_para    52		84210		1619.42
+vizinhos_bidirecional    0		0		0
+checar_aresta            55		2471		44.9273
+trocar_tipo              0		0		0
+
+=== L_consultas_pequeno_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        50		65627		1312.54
+adicionar_tema           10		11538		1153.8
+seguir_usuario           154		57516		373.481
+remover_seguimento       41		16602		404.927
+consultar_temas          63		26082		414
+consultar_seguidores     65		127167		1956.42
+consultar_seguidos       47		21858		465.064
+consultar_amigos         60		18619		310.317
+consultar_relacao        60		32551		542.517
+consultar_interesse      53		23679		446.774
+consultar_popularidade   57		113070		1983.68
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 50		9347		186.94
+criar_aresta             154		8280		53.7662
+remover_aresta           41		3062		74.6829
+vizinhos_apontados_por   47		3159		67.2128
+vizinhos_apontam_para    65		100722		1549.57
+vizinhos_bidirecional    60		8217		136.95
+checar_aresta            120		6254		52.1167
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 60		12768		212.8
+criar_aresta             100		4223		42.23
+remover_aresta           0		0		0
+vizinhos_apontados_por   63		3615		57.381
+vizinhos_apontam_para    57		94264		1653.75
+vizinhos_bidirecional    0		0		0
+checar_aresta            53		2374		44.7925
+trocar_tipo              0		0		0
+
+=== M_atualizacoes_grande_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		37432491		37432.5
+adicionar_tema           50		80808		1616.16
+seguir_usuario           12196		4466505		366.227
+remover_seguimento       1536		595216		387.51
+consultar_temas          162		1236798		7634.56
+consultar_seguidores     185		5613738		30344.5
+consultar_seguidos       182		1755992		9648.31
+consultar_amigos         179		1264646		7065.06
+consultar_relacao        187		115515		617.727
+consultar_interesse      180		101283		562.683
+consultar_popularidade   193		4003692		20744.5
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		13032403		13032.4
+criar_aresta             12196		465546		38.172
+remover_aresta           1536		63677		41.4564
+vizinhos_apontados_por   182		1201596		6602.18
+vizinhos_apontam_para    185		5059663		27349.5
+vizinhos_bidirecional    179		1215932		6792.92
+checar_aresta            374		25648		68.5775
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		23276167		22167.8
+criar_aresta             4000		133954		33.4885
+remover_aresta           0		0		0
+vizinhos_apontados_por   162		1084919		6697.03
+vizinhos_apontam_para    193		3911629		20267.5
+vizinhos_bidirecional    0		0		0
+checar_aresta            180		11021		61.2278
+trocar_tipo              0		0		0
+
+=== M_atualizacoes_grande_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		34105036		34105
+adicionar_tema           50		86887		1737.74
+seguir_usuario           4252		1676632		394.316
+remover_seguimento       1541		604247		392.114
+consultar_temas          186		1452906		7811.32
+consultar_seguidores     160		6431199		40195
+consultar_seguidos       147		1027557		6990.18
+consultar_amigos         183		1257093		6869.36
+consultar_relacao        187		137663		736.166
+consultar_interesse      171		102276		598.105
+consultar_popularidade   173		3624427		20950.4
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		11561938		11561.9
+criar_aresta             4252		185936		43.7291
+remover_aresta           1541		65020		42.1934
+vizinhos_apontados_por   147		944370		6424.29
+vizinhos_apontam_para    160		6327062		39544.1
+vizinhos_bidirecional    183		1208192		6602.14
+checar_aresta            374		35267		94.2968
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		21409840		20390.3
+criar_aresta             4000		129891		32.4727
+remover_aresta           0		0		0
+vizinhos_apontados_por   186		1274671		6853.07
+vizinhos_apontam_para    173		3532788		20420.7
+vizinhos_bidirecional    0		0		0
+checar_aresta            171		10201		59.655
+trocar_tipo              0		0		0
+
+=== M_atualizacoes_medio_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        300		3473006		11576.7
+adicionar_tema           30		38761		1292.03
+seguir_usuario           3873		1360182		351.196
+remover_seguimento       612		225992		369.268
+consultar_temas          69		195933		2839.61
+consultar_seguidores     72		587989		8166.51
+consultar_seguidos       65		324751		4996.17
+consultar_amigos         82		203337		2479.72
+consultar_relacao        81		45578		562.691
+consultar_interesse      64		31962		499.406
+consultar_popularidade   82		507433		6188.21
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 300		1424508		4748.36
+criar_aresta             3873		135581		35.0067
+remover_aresta           612		22704		37.098
+vizinhos_apontados_por   65		148065		2277.92
+vizinhos_apontam_para    72		373065		5181.46
+vizinhos_bidirecional    82		181154		2209.2
+checar_aresta            162		7296		45.037
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 330		1749729		5302.21
+criar_aresta             900		30641		34.0456
+remover_aresta           0		0		0
+vizinhos_apontados_por   69		152195		2205.72
+vizinhos_apontam_para    82		476875		5815.55
+vizinhos_bidirecional    0		0		0
+checar_aresta            64		3090		48.2812
+trocar_tipo              0		0		0
+
+=== M_atualizacoes_medio_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        300		3369868		11232.9
+adicionar_tema           30		38580		1286
+seguir_usuario           1489		535593		359.7
+remover_seguimento       623		225015		361.18
+consultar_temas          57		160330		2812.81
+consultar_seguidores     68		349346		5137.44
+consultar_seguidos       83		208257		2509.12
+consultar_amigos         69		151711		2198.71
+consultar_relacao        67		36707		547.866
+consultar_interesse      82		41633		507.72
+consultar_popularidade   62		373620		6026.13
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 300		1389049		4630.16
+criar_aresta             1489		52318		35.1363
+remover_aresta           623		22307		35.8058
+vizinhos_apontados_por   83		163046		1964.41
+vizinhos_apontam_para    68		312006		4588.32
+vizinhos_bidirecional    69		135418		1962.58
+checar_aresta            134		6151		45.903
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 330		1682503		5098.49
+criar_aresta             900		30098		33.4422
+remover_aresta           0		0		0
+vizinhos_apontados_por   57		124531		2184.75
+vizinhos_apontam_para    62		350338		5650.61
+vizinhos_bidirecional    0		0		0
+checar_aresta            82		3645		44.4512
+trocar_tipo              0		0		0
+
+=== M_atualizacoes_pequeno_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        50		153003		3060.06
+adicionar_tema           10		17342		1734.2
+seguir_usuario           727		259663		357.171
+remover_seguimento       144		51806		359.764
+consultar_temas          15		13242		882.8
+consultar_seguidores     26		109122		4197
+consultar_seguidos       23		90255		3924.13
+consultar_amigos         16		22965		1435.31
+consultar_relacao        16		8737		546.062
+consultar_interesse      23		10743		467.087
+consultar_popularidade   10		15835		1583.5
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 50		52224		1044.48
+criar_aresta             727		22635		31.1348
+remover_aresta           144		4600		31.9444
+vizinhos_apontados_por   23		17105		743.696
+vizinhos_apontam_para    26		31507		1211.81
+vizinhos_bidirecional    16		12086		755.375
+checar_aresta            32		1168		36.5
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 60		64458		1074.3
+criar_aresta             100		3911		39.11
+remover_aresta           0		0		0
+vizinhos_apontados_por   15		7218		481.2
+vizinhos_apontam_para    10		12146		1214.6
+vizinhos_bidirecional    0		0		0
+checar_aresta            23		937		40.7391
+trocar_tipo              0		0		0
+
+=== M_atualizacoes_pequeno_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        50		148069		2961.38
+adicionar_tema           10		14660		1466
+seguir_usuario           326		109877		337.046
+remover_seguimento       144		48559		337.215
+consultar_temas          18		15534		863
+consultar_seguidores     22		27328		1242.18
+consultar_seguidos       17		18656		1097.41
+consultar_amigos         22		13328		605.818
+consultar_relacao        17		8701		511.824
+consultar_interesse      16		7440		465
+consultar_popularidade   18		27425		1523.61
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 50		49079		981.58
+criar_aresta             326		9741		29.8804
+remover_aresta           144		4420		30.6944
+vizinhos_apontados_por   17		7691		452.412
+vizinhos_apontam_para    22		17359		789.045
+vizinhos_bidirecional    22		9339		424.5
+checar_aresta            34		1145		33.6765
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 60		61819		1030.32
+criar_aresta             100		3664		36.64
+remover_aresta           0		0		0
+vizinhos_apontados_por   18		8465		470.278
+vizinhos_apontam_para    18		21274		1181.89
+vizinhos_bidirecional    0		0		0
+checar_aresta            16		671		41.9375
+trocar_tipo              0		0		0
+
+=== M_consultas_grande_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		33619775		33619.8
+adicionar_tema           50		79366		1587.32
+seguir_usuario           10604		3791286		357.534
+remover_seguimento       383		166771		435.433
+consultar_temas          603		4572868		7583.53
+consultar_seguidores     560		15379192		27462.8
+consultar_seguidos       578		5350136		9256.29
+consultar_amigos         594		4142061		6973.17
+consultar_relacao        558		353870		634.176
+consultar_interesse      539		298444		553.699
+consultar_popularidade   581		11788397		20289.8
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		11597019		11597
+criar_aresta             10604		406422		38.3272
+remover_aresta           383		18601		48.5666
+vizinhos_apontados_por   578		3810385		6592.36
+vizinhos_apontam_para    560		13856550		24743.8
+vizinhos_bidirecional    594		3971191		6685.51
+checar_aresta            1116		72004		64.5197
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		20911203		19915.4
+criar_aresta             4000		131734		32.9335
+remover_aresta           0		0		0
+vizinhos_apontados_por   603		4039592		6699.16
+vizinhos_apontam_para    581		11520958		19829.5
+vizinhos_bidirecional    0		0		0
+checar_aresta            539		31749		58.9035
+trocar_tipo              0		0		0
+
+=== M_consultas_grande_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		34185461		34185.5
+adicionar_tema           50		81761		1635.22
+seguir_usuario           2592		1033978		398.911
+remover_seguimento       407		180858		444.369
+consultar_temas          531		4088672		7699.95
+consultar_seguidores     583		14538388		24937.2
+consultar_seguidos       579		4027248		6955.52
+consultar_amigos         544		3640982		6692.98
+consultar_relacao        567		366196		645.848
+consultar_interesse      586		328678		560.884
+consultar_popularidade   611		12494194		20448.8
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		11579643		11579.6
+criar_aresta             2592		110829		42.7581
+remover_aresta           407		19637		48.2482
+vizinhos_apontados_por   579		3687904		6369.44
+vizinhos_apontam_para    583		14162318		24292.1
+vizinhos_bidirecional    544		3480525		6398.02
+checar_aresta            1134		71673		63.2037
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		21469056		20446.7
+criar_aresta             4000		134811		33.7028
+remover_aresta           0		0		0
+vizinhos_apontados_por   531		3613750		6805.56
+vizinhos_apontam_para    611		12210446		19984.4
+vizinhos_bidirecional    0		0		0
+checar_aresta            586		32631		55.6843
+trocar_tipo              0		0		0
+
+=== M_consultas_medio_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        300		3500832		11669.4
+adicionar_tema           30		43352		1445.07
+seguir_usuario           3283		1155791		352.053
+remover_seguimento       158		63279		400.5
+consultar_temas          217		629346		2900.21
+consultar_seguidores     227		1707326		7521.26
+consultar_seguidos       247		1191080		4822.19
+consultar_amigos         204		507074		2485.66
+consultar_relacao        216		126405		585.208
+consultar_interesse      210		98897		470.938
+consultar_popularidade   238		1442977		6062.93
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 300		1438442		4794.81
+criar_aresta             3283		115352		35.1362
+remover_aresta           158		6808		43.0886
+vizinhos_apontados_por   247		546276		2211.64
+vizinhos_apontam_para    227		1133254		4992.31
+vizinhos_bidirecional    204		447981		2195.99
+checar_aresta            432		18816		43.5556
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 330		1758239		5328
+criar_aresta             900		30028		33.3644
+remover_aresta           0		0		0
+vizinhos_apontados_por   217		495992		2285.68
+vizinhos_apontam_para    238		1355751		5696.43
+vizinhos_bidirecional    0		0		0
+checar_aresta            210		8779		41.8048
+trocar_tipo              0		0		0
+
+=== M_consultas_medio_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        300		3490034		11633.4
+adicionar_tema           30		38449		1281.63
+seguir_usuario           830		297899		358.914
+remover_seguimento       152		60511		398.099
+consultar_temas          207		578374		2794.08
+consultar_seguidores     246		1262470		5131.99
+consultar_seguidos       234		583824		2494.97
+consultar_amigos         228		500442		2194.92
+consultar_relacao        225		124193		551.969
+consultar_interesse      251		118011		470.163
+consultar_popularidade   227		1369138		6031.44
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 300		1441340		4804.47
+criar_aresta             830		28400		34.2169
+remover_aresta           152		5986		39.3816
+vizinhos_apontados_por   234		461636		1972.8
+vizinhos_apontam_para    246		1127637		4583.89
+vizinhos_bidirecional    228		445960		1955.96
+checar_aresta            450		18882		41.96
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 330		1749556		5301.68
+criar_aresta             900		30157		33.5078
+remover_aresta           0		0		0
+vizinhos_apontados_por   207		453625		2191.43
+vizinhos_apontam_para    227		1286034		5665.35
+vizinhos_bidirecional    0		0		0
+checar_aresta            251		10170		40.5179
+trocar_tipo              0		0		0
+
+=== M_consultas_pequeno_denso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        50		144164		2883.28
+adicionar_tema           10		15110		1511
+seguir_usuario           572		192017		335.694
+remover_seguimento       31		11346		366
+consultar_temas          61		50842		833.475
+consultar_seguidores     49		186996		3816.24
+consultar_seguidos       60		197530		3292.17
+consultar_amigos         65		72422		1114.18
+consultar_relacao        55		32358		588.327
+consultar_interesse      55		24044		437.164
+consultar_popularidade   52		77896		1498
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 50		46891		937.82
+criar_aresta             572		18375		32.1241
+remover_aresta           31		1157		37.3226
+vizinhos_apontados_por   60		41204		686.733
+vizinhos_apontam_para    49		51869		1058.55
+vizinhos_bidirecional    65		43490		669.077
+checar_aresta            110		3599		32.7182
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 60		60967		1016.12
+criar_aresta             100		3768		37.68
+remover_aresta           0		0		0
+vizinhos_apontados_por   61		28031		459.525
+vizinhos_apontam_para    52		60670		1166.73
+vizinhos_bidirecional    0		0		0
+checar_aresta            55		1816		33.0182
+trocar_tipo              0		0		0
+
+=== M_consultas_pequeno_esparso ===
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        50		145034		2900.68
+adicionar_tema           10		14898		1489.8
+seguir_usuario           154		53575		347.89
+remover_seguimento       41		14943		364.463
+consultar_temas          63		51585		818.81
+consultar_seguidores     65		72263		1111.74
+consultar_seguidos       47		40497		861.638
+consultar_amigos         60		34857		580.95
+consultar_relacao        60		30529		508.817
+consultar_interesse      53		23511		443.604
+consultar_popularidade   57		84148		1476.28
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 50		47554		951.08
+criar_aresta             154		4916		31.9221
+remover_aresta           41		1388		33.8537
+vizinhos_apontados_por   47		19608		417.191
+vizinhos_apontam_para    65		48498		746.123
+vizinhos_bidirecional    60		24227		403.783
+checar_aresta            120		3799		31.6583
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 60		60724		1012.07
+criar_aresta             100		3805		38.05
+remover_aresta           0		0		0
+vizinhos_apontados_por   63		28649		454.746
+vizinhos_apontam_para    57		65497		1149.07
+vizinhos_bidirecional    0		0		0
+checar_aresta            53		1740		32.8302
+trocar_tipo              0		0		0
+

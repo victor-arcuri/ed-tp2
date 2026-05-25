@@ -1,0 +1,37 @@
+
+=== Relatorio de Medicoes ===
+--- Sistema ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+alterar_armazenamento    0		0		0
+adicionar_usuario        1000		34105036		34105
+adicionar_tema           50		86887		1737.74
+seguir_usuario           4252		1676632		394.316
+remover_seguimento       1541		604247		392.114
+consultar_temas          186		1452906		7811.32
+consultar_seguidores     160		6431199		40195
+consultar_seguidos       147		1027557		6990.18
+consultar_amigos         183		1257093		6869.36
+consultar_relacao        187		137663		736.166
+consultar_interesse      171		102276		598.105
+consultar_popularidade   173		3624427		20950.4
+consultar_recomendacao   0		0		0
+--- Grafo Social ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1000		11561938		11561.9
+criar_aresta             4252		185936		43.7291
+remover_aresta           1541		65020		42.1934
+vizinhos_apontados_por   147		944370		6424.29
+vizinhos_apontam_para    160		6327062		39544.1
+vizinhos_bidirecional    183		1208192		6602.14
+checar_aresta            374		35267		94.2968
+trocar_tipo              0		0		0
+--- Grafo de Temas ---
+Operacao                 Chamadas  Total(ns)        Media(ns)
+criar_no                 1050		21409840		20390.3
+criar_aresta             4000		129891		32.4727
+remover_aresta           0		0		0
+vizinhos_apontados_por   186		1274671		6853.07
+vizinhos_apontam_para    173		3532788		20420.7
+vizinhos_bidirecional    0		0		0
+checar_aresta            171		10201		59.655
+trocar_tipo              0		0		0

@@ -2,6 +2,7 @@
 #define GRAFO_HPP
 
 #include "Lista.hpp"
+#include "Medicoes.hpp"
 #include <stdexcept>
 
 #define MATRIZ_DIMENSOES_INICIAIS 0
@@ -241,6 +242,8 @@ class Grafo {
 	ListaAdjacencia *lista;
 	ListaArestas *lista_arestas;
 
+	mutable MedicoesOp medicoes[NUM_OP_GRAFO];
+
   public:
 	Grafo(TipoGrafo tipo);
 	~Grafo();
@@ -349,6 +352,18 @@ class Grafo {
 	 * retorno: true se a aresta existir, false caso contrário.
 	 */
 	bool checar_aresta(int id_interno_grafo1, int id_interno_grafo2) const;
+
+	/**
+	 * Função get_medicoes
+	 * ---------------------------------------------------
+	 * Retorna o array de medições de tempo por operação do grafo,
+	 * permitindo que o programa usuário do TAD recupere estatísticas
+	 * de desempenho para fins de análise experimental.
+	 *
+	 * retorno: ponteiro constante para o array de MedicoesOp indexado
+	 *          por OperacaoGrafo, com NUM_OP_GRAFO entradas.
+	 */
+	const MedicoesOp *get_medicoes() const;
 };
 
 #endif
