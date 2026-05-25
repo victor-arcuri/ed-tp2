@@ -197,8 +197,7 @@ int Grafo::criar_no(TipoNo tipo, int id) {
 	}
 	int resultado = id_nos - 1;
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_G_CRIAR_NO].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_G_CRIAR_NO].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 	return resultado;
 }
 
@@ -212,8 +211,7 @@ void Grafo::criar_aresta(int id_grafo1, int id_grafo2, bool bidirecional) {
 		lista_arestas->adicionar_aresta(id_grafo1, id_grafo2, bidirecional);
 	}
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_G_CRIAR_ARESTA].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_G_CRIAR_ARESTA].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 }
 
 void Grafo::trocar_tipo(TipoGrafo novo_tipo) {
@@ -289,8 +287,7 @@ void Grafo::trocar_tipo(TipoGrafo novo_tipo) {
 		this->tipo = novo_tipo;
 	}
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_G_TROCAR_TIPO].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_G_TROCAR_TIPO].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 }
 
 Lista<No *> Grafo::obter_vizinhos_apontados_por(int id_interno_grafo) const {
@@ -311,8 +308,7 @@ Lista<No *> Grafo::obter_vizinhos_apontados_por(int id_interno_grafo) const {
 		}
 	}
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_G_VIZINHOS_APONTADOS].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_G_VIZINHOS_APONTADOS].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 	return resultado;
 }
 
@@ -407,8 +403,7 @@ bool Grafo::checar_aresta(int id_interno_grafo1, int id_interno_grafo2) const {
 		resultado = lista_arestas->checar_aresta(id_interno_grafo1, id_interno_grafo2);
 	}
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_G_CHECAR_ARESTA].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_G_CHECAR_ARESTA].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 	return resultado;
 }
 
@@ -422,8 +417,7 @@ void Grafo::remover_aresta(int id_interno_grafo1, int id_interno_grafo2, bool bi
 		lista_arestas->remover_aresta(id_interno_grafo1, id_interno_grafo2, bidirecional);
 	}
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_G_REMOVER_ARESTA].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_G_REMOVER_ARESTA].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 }
 
 const MedicoesOp *Grafo::get_medicoes() const { return medicoes; }

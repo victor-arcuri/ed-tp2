@@ -4,31 +4,19 @@
 #include <iostream>
 
 static const char *NOME_OP_SISTEMA[NUM_OP_SISTEMA] = {
-	"alterar_armazenamento",
-	"adicionar_usuario",
-	"adicionar_tema",
-	"seguir_usuario",
-	"remover_seguimento",
-	"consultar_temas",
-	"consultar_seguidores",
-	"consultar_seguidos",
-	"consultar_amigos",
-	"consultar_relacao",
-	"consultar_interesse",
-	"consultar_popularidade",
-	"consultar_recomendacao"
-};
+	"alterar_armazenamento", "adicionar_usuario", "adicionar_tema",		  "seguir_usuario",
+	"remover_seguimento",	 "consultar_temas",	  "consultar_seguidores", "consultar_seguidos",
+	"consultar_amigos",		 "consultar_relacao", "consultar_interesse",  "consultar_popularidade",
+	"consultar_recomendacao"};
 
-static const char *NOME_OP_GRAFO[NUM_OP_GRAFO] = {
-	"criar_no",
-	"criar_aresta",
-	"remover_aresta",
-	"vizinhos_apontados_por",
-	"vizinhos_apontam_para",
-	"vizinhos_bidirecional",
-	"checar_aresta",
-	"trocar_tipo"
-};
+static const char *NOME_OP_GRAFO[NUM_OP_GRAFO] = {"criar_no",
+												  "criar_aresta",
+												  "remover_aresta",
+												  "vizinhos_apontados_por",
+												  "vizinhos_apontam_para",
+												  "vizinhos_bidirecional",
+												  "checar_aresta",
+												  "trocar_tipo"};
 
 Sistema::Sistema(TipoGrafo tipoInicial)
 	: grafo_temas(tipoInicial), grafo_social(tipoInicial), dicionario(usuarios, temas, grafo_temas, grafo_social),
@@ -111,8 +99,7 @@ const int Sistema::adicionar_usuario(const std::string &nome, int idade, const L
 	nova_linha();
 	std::cout << "U " << id_criado;
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_S_ADICIONAR_USUARIO].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_S_ADICIONAR_USUARIO].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 	return id_criado;
 };
 
@@ -127,8 +114,7 @@ const int Sistema::adicionar_tema(const std::string &nome, TipoTema tipo) {
 	nova_linha();
 	std::cout << "T " << id_criado;
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_S_ADICIONAR_TEMA].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_S_ADICIONAR_TEMA].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 	return id_criado;
 };
 
@@ -142,8 +128,7 @@ void Sistema::seguir_usuario(int id1, int id2) {
 	nova_linha();
 	std::cout << "S " << nome_1 << " " << nome_2;
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_S_SEGUIR_USUARIO].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_S_SEGUIR_USUARIO].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 };
 
 void Sistema::remover_seguimento_usuario(int id1, int id2) {
@@ -161,8 +146,7 @@ void Sistema::remover_seguimento_usuario(int id1, int id2) {
 	nova_linha();
 	std::cout << "R " << nome_1 << " " << nome_2;
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_S_REMOVER_SEGUIMENTO].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_S_REMOVER_SEGUIMENTO].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 };
 
 void Sistema::consultar_temas(int id_usuario) const {
@@ -178,8 +162,7 @@ void Sistema::consultar_temas(int id_usuario) const {
 		std::cout << " " << dicionario.get_tema(temas[i]->id_externo).get_nome();
 	}
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_S_CONSULTAR_TEMAS].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_S_CONSULTAR_TEMAS].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 };
 
 void Sistema::consultar_seguidores(int id_usuario) const {
@@ -214,8 +197,7 @@ void Sistema::consultar_seguidos(int id_usuario) const {
 		std::cout << " " << dicionario.get_usuario(seguidos[i]->id_externo).get_nome();
 	}
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_S_CONSULTAR_SEGUIDOS].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_S_CONSULTAR_SEGUIDOS].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 };
 
 void Sistema::consultar_amigos(int id_usuario) const {
@@ -232,8 +214,7 @@ void Sistema::consultar_amigos(int id_usuario) const {
 		std::cout << " " << dicionario.get_usuario(amigos[i]->id_externo).get_nome();
 	}
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_S_CONSULTAR_AMIGOS].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_S_CONSULTAR_AMIGOS].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 };
 
 void Sistema::consultar_relacao(int id1, int id2) const {
@@ -259,8 +240,7 @@ void Sistema::consultar_relacao(int id1, int id2) const {
 	nova_linha();
 	std::cout << "Q " << nome_1 << " " << nome_2 << " " << caso;
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_S_CONSULTAR_RELACAO].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_S_CONSULTAR_RELACAO].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 };
 
 void Sistema::consultar_interesse(int id_usuario, int id_tema) const {
@@ -278,8 +258,7 @@ void Sistema::consultar_interesse(int id_usuario, int id_tema) const {
 	nova_linha();
 	std::cout << "G " << nome_usuario << " " << nome_tema << " " << valor;
 	auto t1 = std::chrono::high_resolution_clock::now();
-	medicoes[OP_S_CONSULTAR_INTERESSE].registrar(
-		std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
+	medicoes[OP_S_CONSULTAR_INTERESSE].registrar(std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count());
 };
 
 void Sistema::consultar_popularidade(int id_tema) const {
@@ -437,9 +416,8 @@ void Sistema::imprimir_relatorio(std::ostream &out) const {
 		int padding = 25 - (int)std::string(NOME_OP_SISTEMA[i]).size();
 		for (int p = 0; p < padding; p++)
 			out << ' ';
-		out << medicoes[i].contagem << "\t\t"
-		    << medicoes[i].tempo_total_ns << "\t\t"
-		    << medicoes[i].tempo_medio_ns() << "\n";
+		out << medicoes[i].contagem << "\t\t" << medicoes[i].tempo_total_ns << "\t\t" << medicoes[i].tempo_medio_ns()
+			<< "\n";
 	}
 
 	const MedicoesOp *m_social = grafo_social.get_medicoes();
@@ -450,9 +428,8 @@ void Sistema::imprimir_relatorio(std::ostream &out) const {
 		int padding = 25 - (int)std::string(NOME_OP_GRAFO[i]).size();
 		for (int p = 0; p < padding; p++)
 			out << ' ';
-		out << m_social[i].contagem << "\t\t"
-		    << m_social[i].tempo_total_ns << "\t\t"
-		    << m_social[i].tempo_medio_ns() << "\n";
+		out << m_social[i].contagem << "\t\t" << m_social[i].tempo_total_ns << "\t\t" << m_social[i].tempo_medio_ns()
+			<< "\n";
 	}
 
 	const MedicoesOp *m_temas = grafo_temas.get_medicoes();
@@ -463,8 +440,7 @@ void Sistema::imprimir_relatorio(std::ostream &out) const {
 		int padding = 25 - (int)std::string(NOME_OP_GRAFO[i]).size();
 		for (int p = 0; p < padding; p++)
 			out << ' ';
-		out << m_temas[i].contagem << "\t\t"
-		    << m_temas[i].tempo_total_ns << "\t\t"
-		    << m_temas[i].tempo_medio_ns() << "\n";
+		out << m_temas[i].contagem << "\t\t" << m_temas[i].tempo_total_ns << "\t\t" << m_temas[i].tempo_medio_ns()
+			<< "\n";
 	}
 }
